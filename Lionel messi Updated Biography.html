@@ -1,0 +1,1930 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lionel Messi - The GOAT Biography & World Cup Champion ⚽</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        albiceleste: '#75AADB',
+                        albipale: '#E8F2FA',
+                        messigold: '#FFD700',
+                        messigolddark: '#B8860B',
+                        barcablue: '#004D98',
+                        barcared: '#A50044',
+                        miamipink: '#F472B6',
+                        darkbg: '#0b0e14',
+                        cardbg: '#121824',
+                        borderbg: '#1e293b'
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Confetti canvas overlay */
+        #confettiCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 100;
+        }
+
+        /* Custom scrollbar */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0b0e14;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #1e293b;
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #75AADB;
+        }
+
+        /* Glowing effects */
+        .gold-glow {
+            box-shadow: 0 0 25px rgba(255, 215, 0, 0.25);
+        }
+        .sky-glow {
+            box-shadow: 0 0 25px rgba(117, 170, 219, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-darkbg text-slate-100 font-sans min-h-screen selection:bg-albiceleste selection:text-slate-950">
+
+    <!-- Celebration Confetti Overlay -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Photo Lightbox Modal -->
+    <div id="lightboxModal" class="fixed inset-0 z-50 bg-slate-950/95 backdrop-blur-md hidden flex items-center justify-center p-4 transition-all duration-300">
+        <div class="relative max-w-4xl w-full bg-cardbg border border-slate-700 rounded-2xl overflow-hidden shadow-2xl">
+            <!-- Close Button -->
+            <button onclick="closeLightbox()" class="absolute top-4 right-4 z-10 bg-slate-900/80 hover:bg-rose-600 text-white w-10 h-10 rounded-full flex items-center justify-center transition border border-slate-600">
+                <i class="fa-solid fa-xmark text-lg"></i>
+            </button>
+            <div class="p-2 sm:p-4">
+                <img id="lightboxImage" src="" alt="Messi Full View" class="w-full max-h-[70vh] object-cover rounded-xl border border-slate-800">
+                <div class="p-4">
+                    <h3 id="lightboxTitle" class="text-xl font-bold text-white mb-1">Photo Title</h3>
+                    <p id="lightboxCaption" class="text-sm text-slate-300">Photo description details...</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-darkbg/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 py-3.5 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2.5 text-xl font-black text-white hover:opacity-90 transition">
+                <span class="bg-gradient-to-tr from-albiceleste to-sky-200 text-slate-950 font-black px-2.5 py-1 rounded-xl shadow-lg shadow-sky-500/20 text-lg">10</span>
+                <span class="tracking-tight">Messi<span class="text-albiceleste">Biography</span></span>
+            </a>
+            
+            <nav class="hidden lg:flex items-center gap-6 text-xs xl:text-sm font-semibold text-slate-300">
+                <a href="#timeline" class="hover:text-albiceleste transition flex items-center gap-1.5"><i class="fa-solid fa-timeline text-xs"></i> Timeline</a>
+                <a href="#road2022" class="hover:text-messigold transition flex items-center gap-1.5"><i class="fa-solid fa-plane-map text-xs text-messigold"></i> Road to Qatar '22</a>
+                <a href="#squads" class="hover:text-albiceleste transition flex items-center gap-1.5"><i class="fa-solid fa-users text-xs text-sky-400"></i> Argentina Squads</a>
+                <a href="#ballondor" class="hover:text-messigold transition flex items-center gap-1.5"><i class="fa-solid fa-award text-xs text-messigold"></i> 8x Ballon d'Or</a>
+                <a href="#trophies" class="hover:text-albiceleste transition flex items-center gap-1.5"><i class="fa-solid fa-trophy text-xs text-amber-400"></i> Trophy Cabinet</a>
+                <a href="#quiz" class="hover:text-emerald-400 transition flex items-center gap-1.5"><i class="fa-solid fa-gamepad text-xs text-emerald-400"></i> Quiz</a>
+            </nav>
+
+            <div class="flex items-center gap-3">
+                <button onclick="playCheerSound()" title="Play Stadium Crowd Sound" class="bg-slate-800/80 hover:bg-slate-700 text-messigold border border-slate-700 px-3 py-2 rounded-xl text-xs font-bold transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-volume-high"></i> <span class="hidden sm:inline">Stadium Cheer</span>
+                </button>
+                <a href="#quiz" class="bg-gradient-to-r from-albiceleste to-sky-400 text-slate-950 font-bold px-3.5 py-2 rounded-xl text-xs sm:text-sm shadow-lg shadow-sky-500/20 hover:brightness-110 transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-circle-play"></i> Quiz
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-12 pb-20 bg-gradient-to-b from-darkbg via-cardbg to-darkbg">
+        <div class="absolute inset-0 opacity-15 bg-[radial-gradient(#75AADB_1px,transparent_1px)] [background-size:24px_24px]"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+            <div class="inline-flex items-center gap-2 bg-slate-900 border border-slate-700 px-4 py-1.5 rounded-full text-xs font-bold text-messigold mb-6 shadow-inner">
+                <i class="fa-solid fa-crown text-messigold"></i> Lionel Andrés Messi • The Greatest Footballer of All Time
+            </div>
+            
+            <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black tracking-tight text-white mb-6 leading-tight">
+                The Legend & Destiny of <br class="hidden sm:inline">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-albiceleste via-white to-messigold">
+                    Lionel Andrés Messi 🏆
+                </span>
+            </h1>
+            
+            <p class="max-w-3xl mx-auto text-slate-300 text-base sm:text-lg mb-10 leading-relaxed font-normal">
+                Explore Messi's journey through high-resolution milestone photos, the step-by-step match-by-match 2022 World Cup Road to Glory, detailed 4-line teammate breakdowns for the 2022 & 2026 Argentina squads, 8 Ballon d'Or competitor runner-ups, and an interactive quiz!
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-16">
+                <a href="#road2022" class="bg-messigold hover:bg-amber-300 text-slate-950 font-extrabold px-6 py-3.5 rounded-xl transition transform hover:-translate-y-0.5 shadow-lg shadow-amber-500/25 flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-trophy"></i> 2022 World Cup Journey
+                </a>
+                <a href="#squads" class="bg-albiceleste hover:bg-sky-300 text-slate-950 font-extrabold px-6 py-3.5 rounded-xl transition transform hover:-translate-y-0.5 shadow-lg shadow-sky-500/25 flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-users"></i> Argentina Teammates (2022 & 2026)
+                </a>
+                <a href="#timeline" class="bg-cardbg hover:bg-slate-800 text-white font-bold px-6 py-3.5 rounded-xl border border-slate-700 transition flex items-center gap-2 text-sm">
+                    <i class="fa-solid fa-images"></i> Visual Timeline
+                </a>
+            </div>
+
+            <!-- Stats Showcase -->
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="bg-cardbg border border-slate-800 p-5 rounded-2xl shadow-xl hover:border-messigold/50 transition">
+                    <div class="text-3xl sm:text-4xl font-black text-messigold mb-1">8</div>
+                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Ballon d'Or Awards</div>
+                </div>
+                <div class="bg-cardbg border border-slate-800 p-5 rounded-2xl shadow-xl hover:border-albiceleste/50 transition">
+                    <div class="text-3xl sm:text-4xl font-black text-albiceleste mb-1">1</div>
+                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">FIFA World Cup '22</div>
+                </div>
+                <div class="bg-cardbg border border-slate-800 p-5 rounded-2xl shadow-xl hover:border-amber-400/50 transition">
+                    <div class="text-3xl sm:text-4xl font-black text-amber-400 mb-1">4</div>
+                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Champions League</div>
+                </div>
+                <div class="bg-cardbg border border-slate-800 p-5 rounded-2xl shadow-xl hover:border-emerald-400/50 transition">
+                    <div class="text-3xl sm:text-4xl font-black text-emerald-400 mb-1">44</div>
+                    <div class="text-xs font-semibold text-slate-400 uppercase tracking-wider">Most Trophies in History</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 1: VISUAL CAREER TIMELINE -->
+    <section id="timeline" class="py-20 bg-darkbg border-t border-slate-800 relative">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-16">
+                <span class="text-albiceleste font-bold text-xs uppercase tracking-widest bg-albiceleste/10 px-3.5 py-1 rounded-full border border-albiceleste/20">Milestone Gallery</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-3">Visual Career Timeline</h2>
+                <p class="text-slate-400 text-sm mt-2 max-w-xl mx-auto">Click any image to open full resolution photo lightbox.</p>
+            </div>
+
+            <!-- Timeline Vertical Line Container -->
+            <div class="relative">
+                <div class="absolute left-6 md:left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-albiceleste via-messigold via-blue-500 to-pink-500 -translate-x-1/2 rounded-full hidden md:block"></div>
+
+                <div class="space-y-16">
+                    
+                    <!-- 1987-2000 -->
+                    <div class="relative flex flex-col md:flex-row items-center group">
+                        <div class="flex items-center justify-start md:justify-end w-full md:w-1/2 pr-0 md:pr-10">
+                            <div class="bg-cardbg border border-slate-800 hover:border-albiceleste/60 rounded-2xl overflow-hidden shadow-xl transition duration-300 w-full group-hover:-translate-y-1">
+                                <div class="relative cursor-pointer overflow-hidden group/img" onclick="openLightbox('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=80', '1987-2000: Rosario Roots & La Masia Arrival', 'Messi started playing at age 4 in Rosario, Argentina. At age 13, FC Barcelona sporting director Charly Rexach signed his first agreement on a paper napkin!')">
+                                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" 
+                                         onerror="this.src='https://placehold.co/800x450/121824/75AADB?text=Rosario+%26+La+Masia+Napkin+Contract'"
+                                         alt="Childhood in Rosario & La Masia" 
+                                         class="w-full h-52 object-cover transition duration-500 group-hover/img:scale-105">
+                                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition flex items-center justify-center text-white font-bold gap-2">
+                                        <i class="fa-solid fa-expand text-lg"></i> Click to Enlarge
+                                    </div>
+                                    <span class="absolute top-3 left-3 bg-albiceleste text-slate-950 font-black text-xs px-3 py-1 rounded-full shadow-lg">1987 - 2000</span>
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-xs font-semibold text-slate-400"><i class="fa-solid fa-location-dot text-albiceleste"></i> Rosario, Argentina ➔ Barcelona</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-white mb-2">Rosario Childhood & The Napkin Contract</h3>
+                                    <p class="text-slate-300 text-sm leading-relaxed mb-4">Lionel Messi was born on June 24, 1987. Diagnosed with growth hormone deficiency as a child, FC Barcelona agreed to pay for his treatment and signed his first agreement on a famous paper napkin in December 2000!</p>
+                                    <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 text-xs text-albiceleste font-semibold flex items-center gap-2">
+                                        <i class="fa-solid fa-star text-messigold"></i> Key Milestone: Joined La Masia youth academy at age 13.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-cardbg border-4 border-albiceleste text-albiceleste items-center justify-center text-sm font-bold shadow-lg shadow-sky-500/50">
+                            <i class="fa-solid fa-baby"></i>
+                        </div>
+                        <div class="hidden md:block w-1/2 pl-10"></div>
+                    </div>
+
+                    <!-- 2004-2005 -->
+                    <div class="relative flex flex-col md:flex-row items-center group">
+                        <div class="hidden md:block w-1/2 pr-10"></div>
+                        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-cardbg border-4 border-blue-500 text-blue-400 items-center justify-center text-sm font-bold shadow-lg shadow-blue-500/50">
+                            <i class="fa-solid fa-shirt"></i>
+                        </div>
+                        <div class="flex items-center justify-start w-full md:w-1/2 pl-0 md:pl-10">
+                            <div class="bg-cardbg border border-slate-800 hover:border-blue-500/60 rounded-2xl overflow-hidden shadow-xl transition duration-300 w-full group-hover:-translate-y-1">
+                                <div class="relative cursor-pointer overflow-hidden group/img" onclick="openLightbox('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1000&q=80', '2004-2005: First Team Debut & First Senior Goal', 'Messi wearing jersey #30 made his official Barcelona debut in October 2004 and scored his first goal vs Albacete in May 2005 via Ronaldinho assist!')">
+                                    <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80" 
+                                         onerror="this.src='https://placehold.co/800x450/121824/38BDF8?text=First+Goal+vs+Albacete+Assist+from+Ronaldinho'"
+                                         alt="First Senior Goal for Barcelona" 
+                                         class="w-full h-52 object-cover transition duration-500 group-hover/img:scale-105">
+                                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition flex items-center justify-center text-white font-bold gap-2">
+                                        <i class="fa-solid fa-expand text-lg"></i> Click to Enlarge
+                                    </div>
+                                    <span class="absolute top-3 left-3 bg-blue-600 text-white font-black text-xs px-3 py-1 rounded-full shadow-lg">2004 - 2005</span>
+                                </div>
+                                <div class="p-6">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span class="text-xs font-semibold text-slate-400"><i class="fa-solid fa-shirt text-blue-400"></i> FC Barcelona #30 Debut</span>
+                                    </div>
+                                    <h3 class="text-xl font-bold text-white mb-2">First Senior Goal vs Albacete</h3>
+                                    <p class="text-slate-300 text-sm leading-relaxed mb-4">On May 1, 2005, a 17-year-old Messi scored his first official senior goal for FC Barcelona against Albacete after a delicate chip assist from Ronaldinho, who carried young Messi on his back to celebrate!</p>
+                                    <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 text-xs text-blue-400 font-semibold flex items-center gap-2">
+                                        <i class="fa-solid fa-futbol text-messigold"></i> Key Milestone: Youngest goalscorer in Barcelona history at the time.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2009: Sextuple -->
+                    <div class="relative flex flex-col md:flex-row items-center group">
+                        <div class="flex items-center justify-start md:justify-end w-full md:w-1/2 pr-0 md:pr-10">
+                            <div class="bg-cardbg border border-slate-800 hover:border-amber-400/60 rounded-2xl overflow-hidden shadow-xl transition duration-300 w-full group-hover:-translate-y-1">
+                                <div class="relative cursor-pointer overflow-hidden group/img" onclick="openLightbox('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1000&q=80', '2009: The Sextuple & 1st Ballon d’Or Victory', 'FC Barcelona under Pep Guardiola won all 6 available trophies in 2009. Messi won his 1st Ballon d’Or!')">
+                                    <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=800&q=80" 
+                                         onerror="this.src='https://placehold.co/800x450/121824/F59E0B?text=The+Sextuple+6+Trophies+in+2009+Pep+Guardiola+Era'"
+                                         alt="The Sextuple & 1st Ballon d'Or" 
+                                         class="w-full h-52 object-cover transition duration-500 group-hover/img:scale-105">
+                                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition flex items-center justify-center text-white font-bold gap-2">
+                                        <i class="fa-solid fa-expand text-lg"></i> Click to Enlarge
+                                    </div>
+                                    <span class="absolute top-3 left-3 bg-amber-400 text-slate-950 font-black text-xs px-3 py-1 rounded-full shadow-lg">2009</span>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold text-white mb-2">Historic Sextuple & 1st Ballon d'Or</h3>
+                                    <p class="text-slate-300 text-sm leading-relaxed mb-4">Under Pep Guardiola, Barcelona became the first team in football history to win all 6 trophies in a single calendar year (La Liga, Copa del Rey, UCL, Spanish Super Cup, UEFA Super Cup, FIFA Club World Cup).</p>
+                                    <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 text-xs text-amber-400 font-semibold flex items-center gap-2">
+                                        <i class="fa-solid fa-crown text-messigold"></i> Key Milestone: Scored iconic header in Rome UCL Final vs Man United.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-cardbg border-4 border-amber-400 text-amber-400 items-center justify-center text-sm font-bold shadow-lg shadow-amber-500/50">
+                            <i class="fa-solid fa-trophy"></i>
+                        </div>
+                        <div class="hidden md:block w-1/2 pl-10"></div>
+                    </div>
+
+                    <!-- 2012: 91 Goals -->
+                    <div class="relative flex flex-col md:flex-row items-center group">
+                        <div class="hidden md:block w-1/2 pr-10"></div>
+                        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-10 h-10 rounded-full bg-cardbg border-4 border-emerald-400 text-emerald-400 items-center justify-center text-sm font-bold shadow-lg shadow-emerald-500/50">
+                            <i class="fa-solid fa-fire"></i>
+                        </div>
+                        <div class="flex items-center justify-start w-full md:w-1/2 pl-0 md:pl-10">
+                            <div class="bg-cardbg border border-slate-800 hover:border-emerald-400/60 rounded-2xl overflow-hidden shadow-xl transition duration-300 w-full group-hover:-translate-y-1">
+                                <div class="relative cursor-pointer overflow-hidden group/img" onclick="openLightbox('https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1000&q=80', '2012: 91 Goals World Record', 'Messi scored 91 goals in 69 games in 2012, breaking Gerd Müller’s 40-year world record!')">
+                                    <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=800&q=80" 
+                                         onerror="this.src='https://placehold.co/800x450/121824/10B981?text=91+Goals+in+2012+Guinness+World+Record'"
+                                         alt="91 Goals World Record" class="w-full h-52 object-cover transition duration-500 group-hover/img:scale-105">
+                                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition flex items-center justify-center text-white font-bold gap-2">
+                                        <i class="fa-solid fa-expand text-lg"></i> Click to Enlarge
+                                    </div>
+                                    <span class="absolute top-3 left-3 bg-emerald-400 text-slate-950 font-black text-xs px-3 py-1 rounded-full shadow-lg">2012</span>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-xl font-bold text-white mb-2">91 Goals in a Calendar Year</h3>
+                                    <p class="text-slate-300 text-sm leading-relaxed mb-4">Messi accomplished the greatest individual scoring feat in football history, scoring an astonishing 91 goals in 69 official matches for Barcelona and Argentina, breaking Gerd Müller's 1972 record (85 goals).</p>
+                                    <div class="bg-slate-900/80 p-3 rounded-xl border border-slate-800 text-xs text-emerald-400 font-semibold flex items-center gap-2">
+                                        <i class="fa-solid fa-award text-messigold"></i> Key Milestone: Won 4th consecutive Ballon d'Or award.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 2022 World Cup -->
+                    <div class="relative flex flex-col md:flex-row items-center group">
+                        <div class="flex items-center justify-start md:justify-end w-full md:w-1/2 pr-0 md:pr-10">
+                            <div class="bg-cardbg border border-slate-800 hover:border-messigold rounded-2xl overflow-hidden shadow-2xl transition duration-300 w-full group-hover:-translate-y-1 bg-gradient-to-br from-cardbg via-slate-900 to-amber-950/20">
+                                <div class="relative cursor-pointer overflow-hidden group/img" onclick="openLightbox('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=80', '2022: FIFA World Cup Champion in Qatar', 'Messi scored 7 goals in Qatar and lifted the FIFA World Cup trophy after defeating France in the greatest final ever!')">
+                                    <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" 
+                                         onerror="this.src='https://placehold.co/800x450/121824/FFD700?text=FIFA+World+Cup+2022+Champions+Argentina+Qatar'"
+                                         alt="FIFA World Cup 2022 Champion" class="w-full h-56 object-cover transition duration-500 group-hover/img:scale-105">
+                                    <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition flex items-center justify-center text-white font-bold gap-2">
+                                        <i class="fa-solid fa-expand text-lg"></i> Click to Enlarge
+                                    </div>
+                                    <span class="absolute top-3 left-3 bg-messigold text-slate-950 font-black text-xs px-3 py-1.5 rounded-full shadow-lg">2022 WORLD CUP</span>
+                                </div>
+                                <div class="p-6">
+                                    <h3 class="text-2xl font-black text-white mb-2">FIFA World Cup Champion 🏆</h3>
+                                    <p class="text-slate-300 text-sm leading-relaxed mb-4">The ultimate masterpiece! Messi scored 2 goals in the epic final against France (3-3 aet, 4-2 pens) and received the FIFA Golden Ball trophy as the tournament's best player.</p>
+                                    <div class="bg-slate-900/90 p-3.5 rounded-xl border border-messigold/40 text-xs text-messigold font-bold flex items-center gap-2">
+                                        <i class="fa-solid fa-trophy text-messigold"></i> Completed football history: Champion of the World.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="hidden md:flex absolute left-1/2 -translate-x-1/2 w-12 h-12 rounded-full bg-cardbg border-4 border-messigold text-messigold items-center justify-center text-lg font-bold shadow-xl shadow-amber-500/80 animate-pulse">
+                            🏆
+                        </div>
+                        <div class="hidden md:block w-1/2 pl-10"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: 2022 WORLD CUP - ROAD TO GLORY (MATCH BY MATCH STEP JOURNEY) -->
+    <section id="road2022" class="py-20 bg-cardbg border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-14">
+                <span class="text-messigold font-bold text-xs uppercase tracking-widest bg-messigold/10 px-3.5 py-1 rounded-full border border-messigold/20">Qatar 2022 Journey</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-3">2022 FIFA World Cup • Road to Glory 🏆</h2>
+                <p class="text-slate-400 text-sm mt-2 max-w-xl mx-auto">Follow Messi's step-by-step match-by-match journey from group stage shock to World Cup immortality.</p>
+            </div>
+
+            <!-- 7 Matches Visual Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <!-- Match 1: Saudi Arabia -->
+                <div class="bg-darkbg border border-slate-800 hover:border-rose-500 rounded-2xl overflow-hidden shadow-xl transition flex flex-col justify-between group">
+                    <div>
+                        <div class="relative cursor-pointer overflow-hidden group/img" onclick="openLightbox('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=80', 'Group Match 1: Argentina 1-2 Saudi Arabia', 'Lusail Stadium (Nov 22, 2022). Messi scored early penalty (10\'), but Saudi Arabia shocked the world with 2 second-half goals.')">
+                            <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.src='https://placehold.co/800x450/121824/F43F5E?text=Match+1+Argentina+1-2+Saudi+Arabia'"
+                                 alt="Group Match 1" class="w-full h-40 object-cover group-hover/img:scale-105 transition duration-500">
+                            <span class="absolute top-2 left-2 bg-slate-900/90 text-rose-400 font-bold text-[11px] px-2.5 py-0.5 rounded-full border border-rose-500/40">MATCH 1 • GROUP C</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="text-center bg-slate-900 p-2.5 rounded-xl border border-slate-800 mb-3">
+                                <div class="text-xs font-bold text-slate-400 mb-0.5">LUSAIL STADIUM</div>
+                                <div class="text-base font-black text-white flex items-center justify-center gap-2">
+                                    <span>🇦🇷 Arg</span> <span class="text-rose-400 font-mono text-lg">1 - 2</span> <span>KSA 🇸🇦</span>
+                                </div>
+                            </div>
+                            <h4 class="font-extrabold text-white text-sm mb-1.5">Shock Defeat & Messi's Rally Call</h4>
+                            <p class="text-slate-300 text-xs leading-relaxed mb-3">Messi opened the scoring with a 10th-minute penalty, but 2 quick goals from Saudi Arabia broke Argentina's 36-game unbeaten streak. After the match, Messi famously rallied fans: <em>"Don't lose faith, we won't leave you stranded."</em></p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-0">
+                        <div class="bg-rose-950/40 border border-rose-900/50 p-2 rounded-lg text-[11px] text-rose-300 font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-futbol text-rose-400"></i> Messi Goal: 1 Penalty (10')
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Match 2: Mexico -->
+                <div class="bg-darkbg border border-slate-800 hover:border-albiceleste rounded-2xl overflow-hidden shadow-xl transition flex flex-col justify-between group">
+                    <div>
+                        <div class="relative cursor-pointer overflow-hidden group/img" onclick="openLightbox('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1000&q=80', 'Group Match 2: Argentina 2-0 Mexico', 'Lusail Stadium (Nov 26, 2022). Facing elimination, Messi unleashed a legendary 25-yard low strike in 64th minute!')">
+                            <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.src='https://placehold.co/800x450/121824/75AADB?text=Match+2+Argentina+2-0+Mexico+Messi+Strike'"
+                                 alt="Group Match 2" class="w-full h-40 object-cover group-hover/img:scale-105 transition duration-500">
+                            <span class="absolute top-2 left-2 bg-slate-900/90 text-albiceleste font-bold text-[11px] px-2.5 py-0.5 rounded-full border border-albiceleste/40">MATCH 2 • GROUP C</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="text-center bg-slate-900 p-2.5 rounded-xl border border-slate-800 mb-3">
+                                <div class="text-xs font-bold text-slate-400 mb-0.5">LUSAIL STADIUM</div>
+                                <div class="text-base font-black text-white flex items-center justify-center gap-2">
+                                    <span>🇦🇷 Arg</span> <span class="text-albiceleste font-mono text-lg">2 - 0</span> <span>Mex 🇲🇽</span>
+                                </div>
+                            </div>
+                            <h4 class="font-extrabold text-white text-sm mb-1.5">The Clutch Long-Range Strike</h4>
+                            <p class="text-slate-300 text-xs leading-relaxed mb-3">Facing elimination, Messi produced sheer magic in the 64th minute, drilling a pinpoint 25-yard low strike past Ochoa before assisting Enzo Fernández's late curler to revive Argentina's World Cup dream.</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-0">
+                        <div class="bg-sky-950/40 border border-sky-900/50 p-2 rounded-lg text-[11px] text-sky-300 font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-star text-messigold"></i> Messi: 1 Goal (64'), 1 Assist
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Match 3: Poland -->
+                <div class="bg-darkbg border border-slate-800 hover:border-emerald-400 rounded-2xl overflow-hidden shadow-xl transition flex flex-col justify-between group">
+                    <div>
+                        <div class="relative cursor-pointer overflow-hidden group/img" onclick="openLightbox('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=80', 'Group Match 3: Argentina 2-0 Poland', 'Stadium 974 (Nov 30, 2022). Alexis Mac Allister & Julián Álvarez goals secured 1st place in Group C.')">
+                            <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.src='https://placehold.co/800x450/121824/10B981?text=Match+3+Argentina+2-0+Poland+Group+Winners'"
+                                 alt="Group Match 3" class="w-full h-40 object-cover group-hover/img:scale-105 transition duration-500">
+                            <span class="absolute top-2 left-2 bg-slate-900/90 text-emerald-400 font-bold text-[11px] px-2.5 py-0.5 rounded-full border border-emerald-500/40">MATCH 3 • GROUP C</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="text-center bg-slate-900 p-2.5 rounded-xl border border-slate-800 mb-3">
+                                <div class="text-xs font-bold text-slate-400 mb-0.5">STADIUM 974</div>
+                                <div class="text-base font-black text-white flex items-center justify-center gap-2">
+                                    <span>🇦🇷 Arg</span> <span class="text-emerald-400 font-mono text-lg">2 - 0</span> <span>Pol 🇵🇱</span>
+                                </div>
+                            </div>
+                            <h4 class="font-extrabold text-white text-sm mb-1.5">Securing Top Spot in Group C</h4>
+                            <p class="text-slate-300 text-xs leading-relaxed mb-3">Despite Szczęsny saving Messi's first-half penalty, Argentina put on a masterclass performance. Alexis Mac Allister and Julián Álvarez scored second-half goals to secure 1st place in Group C.</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-0">
+                        <div class="bg-emerald-950/40 border border-emerald-900/50 p-2 rounded-lg text-[11px] text-emerald-300 font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-check text-emerald-400"></i> Result: Qualified 1st in Group C
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Round of 16: Australia -->
+                <div class="bg-darkbg border border-slate-800 hover:border-blue-400 rounded-2xl overflow-hidden shadow-xl transition flex flex-col justify-between group">
+                    <div>
+                        <div class="relative cursor-pointer overflow-hidden group/img" onclick="openLightbox('https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1000&q=80', 'Round of 16: Argentina 2-1 Australia', 'Ahmad bin Ali Stadium (Dec 3, 2022). In his 1,000th professional match, Messi scored a delicate curled opener!')">
+                            <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.src='https://placehold.co/800x450/121824/3B82F6?text=Round+of+16+Argentina+2-1+Australia+1000th+Match'"
+                                 alt="Round of 16" class="w-full h-40 object-cover group-hover/img:scale-105 transition duration-500">
+                            <span class="absolute top-2 left-2 bg-slate-900/90 text-blue-400 font-bold text-[11px] px-2.5 py-0.5 rounded-full border border-blue-500/40">ROUND OF 16</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="text-center bg-slate-900 p-2.5 rounded-xl border border-slate-800 mb-3">
+                                <div class="text-xs font-bold text-slate-400 mb-0.5">AHMAD BIN ALI STADIUM</div>
+                                <div class="text-base font-black text-white flex items-center justify-center gap-2">
+                                    <span>🇦🇷 Arg</span> <span class="text-blue-400 font-mono text-lg">2 - 1</span> <span>Aus 🇦🇺</span>
+                                </div>
+                            </div>
+                            <h4 class="font-extrabold text-white text-sm mb-1.5">Messi's 1,000th Career Match Magic</h4>
+                            <p class="text-slate-300 text-xs leading-relaxed mb-3">Playing his milestone 1,000th official senior career match, Messi opened the scoring in the 35th minute with his first-ever knockout World Cup goal. Lisandro Martínez & Emi Martínez made clutch late saves!</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-0">
+                        <div class="bg-blue-950/40 border border-blue-900/50 p-2 rounded-lg text-[11px] text-blue-300 font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-star text-messigold"></i> Messi Goal: 35th Min Curler
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quarter-Final: Netherlands -->
+                <div class="bg-darkbg border border-slate-800 hover:border-amber-400 rounded-2xl overflow-hidden shadow-xl transition flex flex-col justify-between group">
+                    <div>
+                        <div class="relative cursor-pointer overflow-hidden group/img" onclick="openLightbox('https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&w=1000&q=80', 'Quarter-Final: Argentina 2-2 Netherlands (4-3 Pens)', 'Lusail Stadium (Dec 9, 2022). Messi gave miraculous no-look assist to Molina & penalty goal before shootout win!')">
+                            <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.src='https://placehold.co/800x450/121824/F59E0B?text=Quarter+Final+Argentina+vs+Netherlands+Shootout'"
+                                 alt="Quarter Final" class="w-full h-40 object-cover group-hover/img:scale-105 transition duration-500">
+                            <span class="absolute top-2 left-2 bg-slate-900/90 text-amber-400 font-bold text-[11px] px-2.5 py-0.5 rounded-full border border-amber-500/40">QUARTER-FINAL</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="text-center bg-slate-900 p-2.5 rounded-xl border border-slate-800 mb-3">
+                                <div class="text-xs font-bold text-slate-400 mb-0.5">LUSAIL STADIUM</div>
+                                <div class="text-base font-black text-white flex items-center justify-center gap-2">
+                                    <span>🇦🇷 Arg</span> <span class="text-amber-400 font-mono text-lg">2 - 2</span> <span>Ned 🇳🇱</span>
+                                </div>
+                                <div class="text-[11px] text-amber-400 font-bold mt-0.5">(Argentina won 4 - 3 on pens)</div>
+                            </div>
+                            <h4 class="font-extrabold text-white text-sm mb-1.5">The No-Look Assist & Epic Shootout</h4>
+                            <p class="text-slate-300 text-xs leading-relaxed mb-3">Messi delivered an impossible no-look reverse pass for Nahuel Molina's goal and scored a penalty. After a dramatic late 2-2 equalizer by Weghorst, Emi Martínez saved 2 shootout penalties!</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-0">
+                        <div class="bg-amber-950/40 border border-amber-900/50 p-2 rounded-lg text-[11px] text-amber-300 font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-wand-magic-sparkles text-messigold"></i> Messi: 1 Goal, 1 Impossible Assist
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Semi-Final: Croatia -->
+                <div class="bg-darkbg border border-slate-800 hover:border-sky-400 rounded-2xl overflow-hidden shadow-xl transition flex flex-col justify-between group">
+                    <div>
+                        <div class="relative cursor-pointer overflow-hidden group/img" onclick="openLightbox('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1000&q=80', 'Semi-Final: Argentina 3-0 Croatia', 'Lusail Stadium (Dec 13, 2022). Messi scored penalty & executed legendary dribble past Gvardiol!')">
+                            <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.src='https://placehold.co/800x450/121824/38BDF8?text=Semi+Final+Argentina+3-0+Croatia+Gvardiol+Dribble'"
+                                 alt="Semi Final" class="w-full h-40 object-cover group-hover/img:scale-105 transition duration-500">
+                            <span class="absolute top-2 left-2 bg-slate-900/90 text-sky-400 font-bold text-[11px] px-2.5 py-0.5 rounded-full border border-sky-500/40">SEMI-FINAL</span>
+                        </div>
+                        <div class="p-5">
+                            <div class="text-center bg-slate-900 p-2.5 rounded-xl border border-slate-800 mb-3">
+                                <div class="text-xs font-bold text-slate-400 mb-0.5">LUSAIL STADIUM</div>
+                                <div class="text-base font-black text-white flex items-center justify-center gap-2">
+                                    <span>🇦🇷 Arg</span> <span class="text-sky-400 font-mono text-lg">3 - 0</span> <span>Cro 🇭🇷</span>
+                                </div>
+                            </div>
+                            <h4 class="font-extrabold text-white text-sm mb-1.5">Masterclass & Dribble vs Gvardiol</h4>
+                            <p class="text-slate-300 text-xs leading-relaxed mb-3">Messi blasted a 34th-minute penalty top corner before providing the tournament's greatest assist—dribbling 40 yards and turning defender Joško Gvardiol inside-out to set up Julián Álvarez.</p>
+                        </div>
+                    </div>
+                    <div class="px-5 pb-5 pt-0">
+                        <div class="bg-sky-950/40 border border-sky-900/50 p-2 rounded-lg text-[11px] text-sky-300 font-semibold flex items-center gap-1.5">
+                            <i class="fa-solid fa-crown text-messigold"></i> Messi: 1 Goal, 1 Assist of the Tournament
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Final: France -->
+                <div class="bg-darkbg border border-slate-800 hover:border-messigold rounded-2xl overflow-hidden shadow-2xl transition flex flex-col justify-between group col-span-1 md:col-span-2 lg:col-span-2 xl:col-span-2 bg-gradient-to-br from-cardbg via-slate-900 to-amber-950/30">
+                    <div>
+                        <div class="relative cursor-pointer overflow-hidden group/img" onclick="openLightbox('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=80', 'World Cup Final: Argentina 3-3 France (4-2 Pens)', 'Lusail Stadium (Dec 18, 2022). Messi scored 2 goals in regulation/extra time and scored in shootout!')">
+                            <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" 
+                                 onerror="this.src='https://placehold.co/800x450/121824/FFD700?text=WORLD+CUP+FINAL+Argentina+3-3+France+Victory'"
+                                 alt="World Cup Final" class="w-full h-52 object-cover group-hover/img:scale-105 transition duration-500">
+                            <span class="absolute top-3 left-3 bg-messigold text-slate-950 font-black text-xs px-3 py-1 rounded-full shadow-md">GRAND FINAL 🏆</span>
+                        </div>
+                        <div class="p-6">
+                            <div class="text-center bg-slate-900/90 p-3 rounded-xl border border-messigold/30 mb-4">
+                                <div class="text-xs font-extrabold text-messigold mb-1">LUSAIL STADIUM • DEC 18, 2022</div>
+                                <div class="text-xl font-black text-white flex items-center justify-center gap-4">
+                                    <span>🇦🇷 Argentina</span> <span class="text-messigold font-mono text-2xl">3 - 3</span> <span>France 🇫🇷</span>
+                                </div>
+                                <div class="text-xs text-messigold font-bold mt-1">(Argentina won 4 - 2 on penalties)</div>
+                            </div>
+                            <h4 class="font-black text-white text-lg mb-2">The Greatest Football Match Ever Played</h4>
+                            <p class="text-slate-300 text-xs sm:text-sm leading-relaxed mb-4">Messi scored a 23rd-minute penalty and a 108th-minute extra-time goal in a thrilling 3-3 epic vs France. Emi Martínez made a legendary 123rd-minute foot save on Kolo Muani, before Argentina converted all 4 penalties (Messi, Dybala, Paredes, Montiel) to win their 3rd FIFA World Cup title!</p>
+                        </div>
+                    </div>
+                    <div class="px-6 pb-6 pt-0">
+                        <div class="bg-amber-950/60 border border-messigold/40 p-3 rounded-xl text-xs text-messigold font-bold flex items-center justify-between">
+                            <span><i class="fa-solid fa-trophy text-messigold"></i> Messi: 2 Final Goals + Shootout Goal</span>
+                            <span class="bg-messigold text-slate-950 px-2.5 py-0.5 rounded-md text-[11px] font-black">Golden Ball MVP</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: ARGENTINA NATIONAL TEAMMATES (2022 CHAMPIONS & 2026 SQUAD) -->
+    <section id="squads" class="py-20 bg-darkbg border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-albiceleste font-bold text-xs uppercase tracking-widest bg-albiceleste/10 px-3.5 py-1 rounded-full border border-albiceleste/20">Brotherhood of La Scaloneta</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-3">Messi's Argentina Teammates</h2>
+                <p class="text-slate-400 text-sm mt-2 max-w-xl mx-auto">Explore detailed 4-line descriptions for every key player who fought alongside Messi in 2022 and 2026.</p>
+            </div>
+
+            <!-- Squad Selector Tabs -->
+            <div class="flex justify-center gap-3 mb-10">
+                <button onclick="switchSquad('2022')" id="squadTab2022" class="bg-messigold text-slate-950 font-black text-xs sm:text-sm px-6 py-3 rounded-xl transition shadow-lg flex items-center gap-2">
+                    <i class="fa-solid fa-trophy"></i> 2022 World Cup Champions (14 Players)
+                </button>
+                <button onclick="switchSquad('2026')" id="squadTab2026" class="bg-slate-800 text-slate-300 hover:text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-xl transition flex items-center gap-2">
+                    <i class="fa-solid fa-earth-americas"></i> 2026 World Cup Squad (13 Players)
+                </button>
+            </div>
+
+            <!-- 2022 CHAMPIONS SQUAD GRID -->
+            <div id="squad2022Grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <!-- 1. Emiliano Martínez -->
+                <div class="bg-cardbg border border-slate-800 hover:border-messigold rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-messigold text-messigold flex items-center justify-center font-black text-lg">
+                            GK
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Emiliano "Dibu" Martínez</h4>
+                            <span class="text-xs text-messigold font-bold"><i class="fa-solid fa-shield-halved"></i> Goalkeeper • Golden Glove 2022</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Role:</strong> Fearless starting goalkeeper & penalty specialist.</p>
+                        <p><strong class="text-white">Key Moment:</strong> Miraculous 123rd-minute foot save vs Kolo Muani in final.</p>
+                        <p><strong class="text-white">Specialty:</strong> Elite mind games & intimidating penalty shootout dominance.</p>
+                        <p><strong class="text-white">Messi Impact:</strong> Messi's ultimate defensive shield who guaranteed shootout wins.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Ángel Di María -->
+                <div class="bg-cardbg border border-slate-800 hover:border-messigold rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-messigold text-messigold flex items-center justify-center font-black text-lg">
+                            RW
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Ángel Di María</h4>
+                            <span class="text-xs text-messigold font-bold"><i class="fa-solid fa-bolt"></i> Winger • Big-Match Final Legend</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Role:</strong> Messi's long-time brother-in-arms in international football.</p>
+                        <p><strong class="text-white">Key Moment:</strong> Won early penalty & scored sweeping 2nd goal in final.</p>
+                        <p><strong class="text-white">Specialty:</strong> Clutch goalscoring in Olympic, Copa & World Cup finals.</p>
+                        <p><strong class="text-white">Messi Impact:</strong> Perfect attacking partner who stepped up in biggest games.</p>
+                    </div>
+                </div>
+
+                <!-- 3. Julián Álvarez -->
+                <div class="bg-cardbg border border-slate-800 hover:border-messigold rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-messigold text-messigold flex items-center justify-center font-black text-lg">
+                            ST
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Julián Álvarez ("El Araña")</h4>
+                            <span class="text-xs text-messigold font-bold"><i class="fa-solid fa-fire"></i> Striker • 4 Goals in Qatar</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Role:</strong> Relentless pressing forward who unlocked Argentina's attack.</p>
+                        <p><strong class="text-white">Key Moment:</strong> Scored solo double in 3-0 semi-final win vs Croatia.</p>
+                        <p><strong class="text-white">Specialty:</strong> Non-stop defensive pressing & deadly box finishing.</p>
+                        <p><strong class="text-white">Messi Impact:</strong> Took pressure off Messi by pressing opponent center-backs.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Rodrigo De Paul -->
+                <div class="bg-cardbg border border-slate-800 hover:border-albiceleste rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-albiceleste text-albiceleste flex items-center justify-center font-black text-lg">
+                            CM
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Rodrigo De Paul</h4>
+                            <span class="text-xs text-albiceleste font-bold"><i class="fa-solid fa-person-running"></i> Midfielder • Engine Room</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Role:</strong> Box-to-box midfielder famously dubbed Messi's "bodyguard".</p>
+                        <p><strong class="text-white">Key Moment:</strong> Covered highest distance & broke up opposition counters.</p>
+                        <p><strong class="text-white">Specialty:</strong> Limitless stamina, physical tackles & quick recycling.</p>
+                        <p><strong class="text-white">Messi Impact:</strong> Protected Messi physically and tactical-wise on pitch.</p>
+                    </div>
+                </div>
+
+                <!-- 5. Enzo Fernández -->
+                <div class="bg-cardbg border border-slate-800 hover:border-albiceleste rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-albiceleste text-albiceleste flex items-center justify-center font-black text-lg">
+                            CM
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Enzo Fernández</h4>
+                            <span class="text-xs text-albiceleste font-bold"><i class="fa-solid fa-award"></i> FIFA Young Player Winner</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Role:</strong> Midfield conductor who transformed Argentina's passing tempo.</p>
+                        <p><strong class="text-white">Key Moment:</strong> Scored curling wondergoal vs Mexico from Messi assist.</p>
+                        <p><strong class="text-white">Specialty:</strong> Deep playmaking vision, tackling & long-range passing.</p>
+                        <p><strong class="text-white">Messi Impact:</strong> Provided precise passing lines to supply Messi in space.</p>
+                    </div>
+                </div>
+
+                <!-- 6. Alexis Mac Allister -->
+                <div class="bg-cardbg border border-slate-800 hover:border-albiceleste rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-albiceleste text-albiceleste flex items-center justify-center font-black text-lg">
+                            CM
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Alexis Mac Allister</h4>
+                            <span class="text-xs text-albiceleste font-bold"><i class="fa-solid fa-brain"></i> Midfielder • Tactical Genius</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Role:</strong> Intelligent link player connecting defense and attack.</p>
+                        <p><strong class="text-white">Key Moment:</strong> Scored opener vs Poland & assisted Di María in final.</p>
+                        <p><strong class="text-white">Specialty:</strong> Elite tactical positioning, smooth turns & ball retention.</p>
+                        <p><strong class="text-white">Messi Impact:</strong> Found pockets between opposition lines to link Messi.</p>
+                    </div>
+                </div>
+
+                <!-- 7. Cristian Romero -->
+                <div class="bg-cardbg border border-slate-800 hover:border-albiceleste rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-albiceleste text-albiceleste flex items-center justify-center font-black text-lg">
+                            CB
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Cristian "Cuti" Romero</h4>
+                            <span class="text-xs text-albiceleste font-bold"><i class="fa-solid fa-shield"></i> Center-Back • Defensive Wall</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Role:</strong> Aggressive center-back who dominated top physical strikers.</p>
+                        <p><strong class="text-white">Key Moment:</strong> Neutralized France and Croatia's forward lines in knockouts.</p>
+                        <p><strong class="text-white">Specialty:</strong> Proactive interceptions, aerial duels & hard tackling.</p>
+                        <p><strong class="text-white">Messi Impact:</strong> Gave Messi confidence that backline was completely secure.</p>
+                    </div>
+                </div>
+
+                <!-- 8. Nicolás Otamendi -->
+                <div class="bg-cardbg border border-slate-800 hover:border-albiceleste rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-albiceleste text-albiceleste flex items-center justify-center font-black text-lg">
+                            CB
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Nicolás Otamendi</h4>
+                            <span class="text-xs text-albiceleste font-bold"><i class="fa-solid fa-anchor"></i> Veteran CB • Played Every Minute</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Role:</strong> Veteran defensive leader of Argentina's World Cup backline.</p>
+                        <p><strong class="text-white">Key Moment:</strong> Highest clearances and interceptions in 2022 tournament.</p>
+                        <p><strong class="text-white">Specialty:</strong> Fearless tackles, leadership & dominating aerial balls.</p>
+                        <p><strong class="text-white">Messi Impact:</strong> Veteran backbone who protected Messi's captaincy dream.</p>
+                    </div>
+                </div>
+
+                <!-- 9. Nahuel Molina -->
+                <div class="bg-cardbg border border-slate-800 hover:border-albiceleste rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-albiceleste text-albiceleste flex items-center justify-center font-black text-lg">
+                            RB
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Nahuel Molina</h4>
+                            <span class="text-xs text-albiceleste font-bold"><i class="fa-solid fa-person-running"></i> Right-Back • Overlapping Engine</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Role:</strong> High-speed right-back providing width and overlap.</p>
+                        <p><strong class="text-white">Key Moment:</strong> Scored opener vs Netherlands off Messi's no-look pass.</p>
+                        <p><strong class="text-white">Specialty:</strong> High stamina, defensive tracking & wing crossing.</p>
+                        <p><strong class="text-white">Messi Impact:</strong> Provided constant passing outlet on right flank for Messi.</p>
+                    </div>
+                </div>
+
+                <!-- 10. Marcos Acuña -->
+                <div class="bg-cardbg border border-slate-800 hover:border-albiceleste rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-albiceleste text-albiceleste flex items-center justify-center font-black text-lg">
+                            LB
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Marcos Acuña ("Huevo")</h4>
+                            <span class="text-xs text-albiceleste font-bold"><i class="fa-solid fa-shield-cat"></i> Left-Back • Physical Warrior</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Role:</strong> Powerhouse left-back providing tactical adaptability.</p>
+                        <p><strong class="text-white">Key Moment:</strong> Won crucial penalty vs Netherlands in quarter-final.</p>
+                        <p><strong class="text-white">Specialty:</strong> Aggressive wing tackles, whipping crosses & physical strength.</p>
+                        <p><strong class="text-white">Messi Impact:</strong> Locked down left flank to prevent opponent counterattacks.</p>
+                    </div>
+                </div>
+
+                <!-- 11. Lisandro Martínez -->
+                <div class="bg-cardbg border border-slate-800 hover:border-albiceleste rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-albiceleste text-albiceleste flex items-center justify-center font-black text-lg">
+                            CB
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Lisandro Martínez ("The Butcher")</h4>
+                            <span class="text-xs text-albiceleste font-bold"><i class="fa-solid fa-shield-halved"></i> Defender • Pass & Block Master</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Role:</strong> Tenacious defender crucial in 3-center-back tactical setups.</p>
+                        <p><strong class="text-white">Key Moment:</strong> Match-saving late tackle vs Aziz Behich (Australia R16).</p>
+                        <p><strong class="text-white">Specialty:</strong> Elite progressive passing, passion & goal-line blocks.</p>
+                        <p><strong class="text-white">Messi Impact:</strong> Brought fire and defensive composure when protecting leads.</p>
+                    </div>
+                </div>
+
+                <!-- 12. Leandro Paredes -->
+                <div class="bg-cardbg border border-slate-800 hover:border-albiceleste rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-albiceleste text-albiceleste flex items-center justify-center font-black text-lg">
+                            DM
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Leandro Paredes</h4>
+                            <span class="text-xs text-albiceleste font-bold"><i class="fa-solid fa-bullseye"></i> Midfielder • Penalty Specialist</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Role:</strong> Tough central midfielder & dressing-room leader.</p>
+                        <p><strong class="text-white">Key Moment:</strong> Converted bullet shootout penalties vs Netherlands & France.</p>
+                        <p><strong class="text-white">Specialty:</strong> Long-range passing, physical toughness & penalty accuracy.</p>
+                        <p><strong class="text-white">Messi Impact:</strong> Controlled match tempo when coming off bench in knockouts.</p>
+                    </div>
+                </div>
+
+                <!-- 13. Gonzalo Montiel -->
+                <div class="bg-cardbg border border-slate-800 hover:border-messigold rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-messigold text-messigold flex items-center justify-center font-black text-lg">
+                            RB
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Gonzalo Montiel</h4>
+                            <span class="text-xs text-messigold font-bold"><i class="fa-solid fa-crown"></i> Right-Back • Winning Penalty Hero</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Role:</strong> Ice-cold right-back written in football immortality.</p>
+                        <p><strong class="text-white">Key Moment:</strong> Scored decisive 4th penalty in final vs France to win trophy.</p>
+                        <p><strong class="text-white">Specialty:</strong> 100% career penalty conversion rate under extreme pressure.</p>
+                        <p><strong class="text-white">Messi Impact:</strong> Delivered the exact kick that fulfilled Messi's life dream.</p>
+                    </div>
+                </div>
+
+                <!-- 14. Lautaro Martínez -->
+                <div class="bg-cardbg border border-slate-800 hover:border-albiceleste rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-albiceleste text-albiceleste flex items-center justify-center font-black text-lg">
+                            ST
+                        </div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Lautaro Martínez ("El Toro")</h4>
+                            <span class="text-xs text-albiceleste font-bold"><i class="fa-solid fa-bullhorn"></i> Striker • Power Finisher</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Role:</strong> Powerful center-forward who fought through ankle injury.</p>
+                        <p><strong class="text-white">Key Moment:</strong> Scored winning penalty vs Netherlands in quarter-final.</p>
+                        <p><strong class="text-white">Specialty:</strong> Hold-up play, aggressive pressing & penalty execution.</p>
+                        <p><strong class="text-white">Messi Impact:</strong> Created space for Messi's 108th-minute extra-time goal in final.</p>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- 2026 SQUAD GRID (HIDDEN BY DEFAULT) -->
+            <div id="squad2026Grid" class="hidden grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+
+                <!-- 1. Emiliano Martínez -->
+                <div class="bg-cardbg border border-slate-800 hover:border-sky-400 rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-sky-400 text-sky-400 flex items-center justify-center font-black text-lg">GK</div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Emiliano "Dibu" Martínez</h4>
+                            <span class="text-xs text-sky-400 font-bold"><i class="fa-solid fa-shield-halved"></i> Goalkeeper • Title Defense Leader</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Growth:</strong> Multi-trophy veteran remaining world's premier goalkeeper.</p>
+                        <p><strong class="text-white">Position:</strong> Undisputed starting goalkeeper for 2026 World Cup.</p>
+                        <p><strong class="text-white">Style of Play:</strong> Dominant aerial command, elite distribution & penalty saves.</p>
+                        <p><strong class="text-white">Squad Role:</strong> Vocal defensive anchor maintaining team confidence.</p>
+                    </div>
+                </div>
+
+                <!-- 2. Cristian Romero -->
+                <div class="bg-cardbg border border-slate-800 hover:border-sky-400 rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-sky-400 text-sky-400 flex items-center justify-center font-black text-lg">CB</div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Cristian "Cuti" Romero</h4>
+                            <span class="text-xs text-sky-400 font-bold"><i class="fa-solid fa-shield"></i> Center-Back • World-Class Leader</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Growth:</strong> Developed into one of the top central defenders globally.</p>
+                        <p><strong class="text-white">Position:</strong> Primary right center-back & defensive pillar.</p>
+                        <p><strong class="text-white">Style of Play:</strong> Fearless proactive tackles & smooth ball carrying.</p>
+                        <p><strong class="text-white">Squad Role:</strong> Defensive general guiding Argentina's back four.</p>
+                    </div>
+                </div>
+
+                <!-- 3. Lisandro Martínez -->
+                <div class="bg-cardbg border border-slate-800 hover:border-sky-400 rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-sky-400 text-sky-400 flex items-center justify-center font-black text-lg">CB</div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Lisandro Martínez</h4>
+                            <span class="text-xs text-sky-400 font-bold"><i class="fa-solid fa-code-branch"></i> Left CB • Build-Up Master</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Growth:</strong> Essential starter providing elite left-footed passing accuracy.</p>
+                        <p><strong class="text-white">Position:</strong> Left center-back pairing seamlessly with Cuti Romero.</p>
+                        <p><strong class="text-white">Style of Play:</strong> Aggressive pressing, line-breaking passes & tactical intelligence.</p>
+                        <p><strong class="text-white">Squad Role:</strong> Emotional heart and build-up hub from the back.</p>
+                    </div>
+                </div>
+
+                <!-- 4. Nahuel Molina -->
+                <div class="bg-cardbg border border-slate-800 hover:border-sky-400 rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-sky-400 text-sky-400 flex items-center justify-center font-black text-lg">RB</div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Nahuel Molina</h4>
+                            <span class="text-xs text-sky-400 font-bold"><i class="fa-solid fa-person-running"></i> Right-Back • Prime Full-Back</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Growth:</strong> Reached full prime maturity as complete modern full-back.</p>
+                        <p><strong class="text-white">Position:</strong> Starter at right-back / right wing-back.</p>
+                        <p><strong class="text-white">Style of Play:</strong> Explosive overlapping speed & dangerous low crosses.</p>
+                        <p><strong class="text-white">Squad Role:</strong> Constant width provider on the right flank.</p>
+                    </div>
+                </div>
+
+                <!-- 5. Valentin Barco -->
+                <div class="bg-cardbg border border-slate-800 hover:border-pink-400 rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-pink-400 text-pink-400 flex items-center justify-center font-black text-lg">LB</div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Valentin Barco</h4>
+                            <span class="text-xs text-pink-400 font-bold"><i class="fa-solid fa-wand-magic-sparkles"></i> Left-Back • Rising Star</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Growth:</strong> Breakout young prodigy taking international football by storm.</p>
+                        <p><strong class="text-white">Position:</strong> Dynamic left-back / inverted wing-back.</p>
+                        <p><strong class="text-white">Style of Play:</strong> Fearless 1v1 dribbling, vision & attacking flair.</p>
+                        <p><strong class="text-white">Squad Role:</strong> Fresh creative spark supplying modern attacking threat.</p>
+                    </div>
+                </div>
+
+                <!-- 6. Enzo Fernández -->
+                <div class="bg-cardbg border border-slate-800 hover:border-sky-400 rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-sky-400 text-sky-400 flex items-center justify-center font-black text-lg">CM</div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Enzo Fernández</h4>
+                            <span class="text-xs text-sky-400 font-bold"><i class="fa-solid fa-gamepad"></i> Midfielder • Engine Conductor</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Growth:</strong> Matured into elite world-class central midfielder.</p>
+                        <p><strong class="text-white">Position:</strong> Central deep-lying playmaker (No. 6 or No. 8).</p>
+                        <p><strong class="text-white">Style of Play:</strong> Long-range shooting, interception & tempo control.</p>
+                        <p><strong class="text-white">Squad Role:</strong> Midfield heartbeat controlling possession flow.</p>
+                    </div>
+                </div>
+
+                <!-- 7. Alexis Mac Allister -->
+                <div class="bg-cardbg border border-slate-800 hover:border-sky-400 rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-sky-400 text-sky-400 flex items-center justify-center font-black text-lg">CM</div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Alexis Mac Allister</h4>
+                            <span class="text-xs text-sky-400 font-bold"><i class="fa-solid fa-brain"></i> Midfielder • Complete Maestro</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Growth:</strong> Premier League winner & indisputable midfield leader.</p>
+                        <p><strong class="text-white">Position:</strong> Box-to-box midfielder (No. 8 or No. 10).</p>
+                        <p><strong class="text-white">Style of Play:</strong> Composure under pressure, key assists & defensive press.</p>
+                        <p><strong class="text-white">Squad Role:</strong> Essential tactical link connecting defense to attack.</p>
+                    </div>
+                </div>
+
+                <!-- 8. Rodrigo De Paul -->
+                <div class="bg-cardbg border border-slate-800 hover:border-sky-400 rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-sky-400 text-sky-400 flex items-center justify-center font-black text-lg">CM</div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Rodrigo De Paul</h4>
+                            <span class="text-xs text-sky-400 font-bold"><i class="fa-solid fa-fire text-amber-400"></i> Midfielder • Veteran Engine</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Growth:</strong> Veteran leader providing relentless energy in 2026.</p>
+                        <p><strong class="text-white">Position:</strong> Right central midfielder / pressing anchor.</p>
+                        <p><strong class="text-white">Style of Play:</strong> Endless running, physical tackles & locker-room fire.</p>
+                        <p><strong class="text-white">Squad Role:</strong> Cultural backbone maintaining high squad intensity.</p>
+                    </div>
+                </div>
+
+                <!-- 9. Giovani Lo Celso -->
+                <div class="bg-cardbg border border-slate-800 hover:border-sky-400 rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-sky-400 text-sky-400 flex items-center justify-center font-black text-lg">CAM</div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Giovani Lo Celso</h4>
+                            <span class="text-xs text-sky-400 font-bold"><i class="fa-solid fa-wand-magic"></i> Playmaker • Creative Vision</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Growth:</strong> Returned to full form after missing 2022 World Cup.</p>
+                        <p><strong class="text-white">Position:</strong> Attacking midfielder / central creator.</p>
+                        <p><strong class="text-white">Style of Play:</strong> Incisive through balls, one-touch passing & dribbling.</p>
+                        <p><strong class="text-white">Squad Role:</strong> Key creative engine unlocking low-block defenses.</p>
+                    </div>
+                </div>
+
+                <!-- 10. Julián Álvarez -->
+                <div class="bg-cardbg border border-slate-800 hover:border-sky-400 rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-sky-400 text-sky-400 flex items-center justify-center font-black text-lg">ST</div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Julián Álvarez</h4>
+                            <span class="text-xs text-sky-400 font-bold"><i class="fa-solid fa-crosshair"></i> Striker • Prime Goalscorer</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Growth:</strong> Reached world-class peak as complete global striker.</p>
+                        <p><strong class="text-white">Position:</strong> Central striker / secondary forward.</p>
+                        <p><strong class="text-white">Style of Play:</strong> Lethal finishing, tireless press & tactical movement.</p>
+                        <p><strong class="text-white">Squad Role:</strong> Primary goalscoring threat leading Argentina's frontline.</p>
+                    </div>
+                </div>
+
+                <!-- 11. Lautaro Martínez -->
+                <div class="bg-cardbg border border-slate-800 hover:border-sky-400 rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-sky-400 text-sky-400 flex items-center justify-center font-black text-lg">ST</div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Lautaro Martínez</h4>
+                            <span class="text-xs text-sky-400 font-bold"><i class="fa-solid fa-trophy"></i> Striker • Copa 2024 Top Scorer</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Growth:</strong> Captain for club and Copa 2024 hero entering 2026.</p>
+                        <p><strong class="text-white">Position:</strong> Clinical center-forward.</p>
+                        <p><strong class="text-white">Style of Play:</strong> Powerful box finishing, aerial headers & hold-up play.</p>
+                        <p><strong class="text-white">Squad Role:</strong> Co-leading striker forming deadly attack duo with Julián.</p>
+                    </div>
+                </div>
+
+                <!-- 12. Alejandro Garnacho -->
+                <div class="bg-cardbg border border-slate-800 hover:border-emerald-400 rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-emerald-400 text-emerald-400 flex items-center justify-center font-black text-lg">LW</div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Alejandro Garnacho</h4>
+                            <span class="text-xs text-emerald-400 font-bold"><i class="fa-solid fa-bolt"></i> Winger • Electric Pace</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Growth:</strong> Premier League starlet stepping onto international stage.</p>
+                        <p><strong class="text-white">Position:</strong> Explosive left winger.</p>
+                        <p><strong class="text-white">Style of Play:</strong> High-speed isolation 1v1 dribbling & direct shooting.</p>
+                        <p><strong class="text-white">Squad Role:</strong> Game-changing winger bringing pace off the bench or starting.</p>
+                    </div>
+                </div>
+
+                <!-- 13. Facundo Buonanotte -->
+                <div class="bg-cardbg border border-slate-800 hover:border-emerald-400 rounded-2xl p-5 shadow-xl transition group">
+                    <div class="flex items-center gap-3 mb-3">
+                        <div class="w-12 h-12 rounded-full bg-slate-800 border-2 border-emerald-400 text-emerald-400 flex items-center justify-center font-black text-lg">RW</div>
+                        <div>
+                            <h4 class="font-extrabold text-white text-base">Facundo Buonanotte</h4>
+                            <span class="text-xs text-emerald-400 font-bold"><i class="fa-solid fa-star"></i> RW/CAM • High Potential</span>
+                        </div>
+                    </div>
+                    <div class="space-y-1.5 text-xs text-slate-300 leading-relaxed border-t border-slate-800 pt-3">
+                        <p><strong class="text-white">Growth:</strong> Highly talented attacking starlet representing new era.</p>
+                        <p><strong class="text-white">Position:</strong> Right winger / attacking midfielder.</p>
+                        <p><strong class="text-white">Style of Play:</strong> Quick footwork, set-piece accuracy & tight control.</p>
+                        <p><strong class="text-white">Squad Role:</strong> Creative depth player carrying forward Messi's legacy.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: BALLON D'OR CABINET (ALL 8 YEARS WITH RUNNER-UPS) -->
+    <section id="ballondor" class="py-20 bg-cardbg border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-14">
+                <span class="text-messigold font-bold text-xs uppercase tracking-widest bg-messigold/10 px-3.5 py-1 rounded-full border border-messigold/20">Golden History</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-3">8x Ballon d'Or Victories & Competitors</h2>
+                <p class="text-slate-400 text-sm mt-2 max-w-xl mx-auto">Explore every single year Messi won the Ballon d'Or, including his exact 2nd & 3rd place competitors.</p>
+            </div>
+
+            <!-- 8 Ballon d'Or Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+
+                <!-- 2009 -->
+                <div class="bg-darkbg border border-slate-800 hover:border-messigold rounded-2xl p-6 transition duration-300 shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-3xl font-black text-messigold">2009</span>
+                            <span class="text-xs font-bold text-slate-300 bg-slate-800 px-2.5 py-1 rounded-lg">FC Barcelona</span>
+                        </div>
+                        <div class="text-center my-4 py-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                            <div class="text-4xl mb-1 group-hover:scale-110 transition">🥇</div>
+                            <h3 class="font-bold text-white text-base">Winner: Lionel Messi</h3>
+                            <div class="text-xs text-messigold font-semibold mt-1">473 Votes (Record Margin)</div>
+                        </div>
+                        <div class="border-t border-slate-800 pt-3 space-y-2 text-xs">
+                            <div class="flex justify-between items-center text-slate-300">
+                                <span class="text-slate-500">2nd Place:</span>
+                                <span class="font-semibold text-slate-200">Cristiano Ronaldo <span class="text-[10px] text-slate-500">(Man Utd)</span></span>
+                            </div>
+                            <div class="flex justify-between items-center text-slate-300">
+                                <span class="text-slate-500">3rd Place:</span>
+                                <span class="font-semibold text-slate-200">Xavi Hernández <span class="text-[10px] text-slate-500">(Barça)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 bg-slate-900/40 p-2.5 rounded-lg">
+                        <strong>Season Stats:</strong> 38 Goals, 18 Assists • Won Historic Sextuple
+                    </div>
+                </div>
+
+                <!-- 2010 -->
+                <div class="bg-darkbg border border-slate-800 hover:border-messigold rounded-2xl p-6 transition duration-300 shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-3xl font-black text-messigold">2010</span>
+                            <span class="text-xs font-bold text-slate-300 bg-slate-800 px-2.5 py-1 rounded-lg">FC Barcelona</span>
+                        </div>
+                        <div class="text-center my-4 py-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                            <div class="text-4xl mb-1 group-hover:scale-110 transition">🥇</div>
+                            <h3 class="font-bold text-white text-base">Winner: Lionel Messi</h3>
+                            <div class="text-xs text-messigold font-semibold mt-1">FIFA Ballon d'Or Winner</div>
+                        </div>
+                        <div class="border-t border-slate-800 pt-3 space-y-2 text-xs">
+                            <div class="flex justify-between items-center text-slate-300">
+                                <span class="text-slate-500">2nd Place:</span>
+                                <span class="font-semibold text-slate-200">Andrés Iniesta <span class="text-[10px] text-slate-500">(Barça)</span></span>
+                            </div>
+                            <div class="flex justify-between items-center text-slate-300">
+                                <span class="text-slate-500">3rd Place:</span>
+                                <span class="font-semibold text-slate-200">Xavi Hernández <span class="text-[10px] text-slate-500">(Barça)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 bg-slate-900/40 p-2.5 rounded-lg">
+                        <strong>Season Stats:</strong> 47 Goals, 12 Assists • All Top 3 Nominees from La Masia!
+                    </div>
+                </div>
+
+                <!-- 2011 -->
+                <div class="bg-darkbg border border-slate-800 hover:border-messigold rounded-2xl p-6 transition duration-300 shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-3xl font-black text-messigold">2011</span>
+                            <span class="text-xs font-bold text-slate-300 bg-slate-800 px-2.5 py-1 rounded-lg">FC Barcelona</span>
+                        </div>
+                        <div class="text-center my-4 py-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                            <div class="text-4xl mb-1 group-hover:scale-110 transition">🥇</div>
+                            <h3 class="font-bold text-white text-base">Winner: Lionel Messi</h3>
+                            <div class="text-xs text-messigold font-semibold mt-1">47.88% Vote Majority</div>
+                        </div>
+                        <div class="border-t border-slate-800 pt-3 space-y-2 text-xs">
+                            <div class="flex justify-between items-center text-slate-300">
+                                <span class="text-slate-500">2nd Place:</span>
+                                <span class="font-semibold text-slate-200">Cristiano Ronaldo <span class="text-[10px] text-slate-500">(Real Madrid)</span></span>
+                            </div>
+                            <div class="flex justify-between items-center text-slate-300">
+                                <span class="text-slate-500">3rd Place:</span>
+                                <span class="font-semibold text-slate-200">Xavi Hernández <span class="text-[10px] text-slate-500">(Barça)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 bg-slate-900/40 p-2.5 rounded-lg">
+                        <strong>Season Stats:</strong> 53 Goals, 24 Assists • Champions League & La Liga Winner
+                    </div>
+                </div>
+
+                <!-- 2012 -->
+                <div class="bg-darkbg border border-slate-800 hover:border-messigold rounded-2xl p-6 transition duration-300 shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-3xl font-black text-messigold">2012</span>
+                            <span class="text-xs font-bold text-slate-300 bg-slate-800 px-2.5 py-1 rounded-lg">FC Barcelona</span>
+                        </div>
+                        <div class="text-center my-4 py-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                            <div class="text-4xl mb-1 group-hover:scale-110 transition">🥇</div>
+                            <h3 class="font-bold text-white text-base">Winner: Lionel Messi</h3>
+                            <div class="text-xs text-messigold font-semibold mt-1">4th Consecutive Win</div>
+                        </div>
+                        <div class="border-t border-slate-800 pt-3 space-y-2 text-xs">
+                            <div class="flex justify-between items-center text-slate-300">
+                                <span class="text-slate-500">2nd Place:</span>
+                                <span class="font-semibold text-slate-200">Cristiano Ronaldo <span class="text-[10px] text-slate-500">(Real Madrid)</span></span>
+                            </div>
+                            <div class="flex justify-between items-center text-slate-300">
+                                <span class="text-slate-500">3rd Place:</span>
+                                <span class="font-semibold text-slate-200">Andrés Iniesta <span class="text-[10px] text-slate-500">(Barça)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 bg-slate-900/40 p-2.5 rounded-lg">
+                        <strong>Season Stats:</strong> 91 Goals, 22 Assists • World Record Goalscoring Year
+                    </div>
+                </div>
+
+                <!-- 2015 -->
+                <div class="bg-darkbg border border-slate-800 hover:border-messigold rounded-2xl p-6 transition duration-300 shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-3xl font-black text-messigold">2015</span>
+                            <span class="text-xs font-bold text-slate-300 bg-slate-800 px-2.5 py-1 rounded-lg">FC Barcelona</span>
+                        </div>
+                        <div class="text-center my-4 py-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                            <div class="text-4xl mb-1 group-hover:scale-110 transition">🥇</div>
+                            <h3 class="font-bold text-white text-base">Winner: Lionel Messi</h3>
+                            <div class="text-xs text-messigold font-semibold mt-1">41.33% Votes</div>
+                        </div>
+                        <div class="border-t border-slate-800 pt-3 space-y-2 text-xs">
+                            <div class="flex justify-between items-center text-slate-300">
+                                <span class="text-slate-500">2nd Place:</span>
+                                <span class="font-semibold text-slate-200">Cristiano Ronaldo <span class="text-[10px] text-slate-500">(Real Madrid)</span></span>
+                            </div>
+                            <div class="flex justify-between items-center text-slate-300">
+                                <span class="text-slate-500">3rd Place:</span>
+                                <span class="font-semibold text-slate-200">Neymar Jr. <span class="text-[10px] text-slate-500">(Barça)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 bg-slate-900/40 p-2.5 rounded-lg">
+                        <strong>Season Stats:</strong> 58 Goals, 31 Assists • MSN Treble Winner
+                    </div>
+                </div>
+
+                <!-- 2019 -->
+                <div class="bg-darkbg border border-slate-800 hover:border-messigold rounded-2xl p-6 transition duration-300 shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-3xl font-black text-messigold">2019</span>
+                            <span class="text-xs font-bold text-slate-300 bg-slate-800 px-2.5 py-1 rounded-lg">FC Barcelona</span>
+                        </div>
+                        <div class="text-center my-4 py-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                            <div class="text-4xl mb-1 group-hover:scale-110 transition">🥇</div>
+                            <h3 class="font-bold text-white text-base">Winner: Lionel Messi</h3>
+                            <div class="text-xs text-messigold font-semibold mt-1">686 Voting Points</div>
+                        </div>
+                        <div class="border-t border-slate-800 pt-3 space-y-2 text-xs">
+                            <div class="flex justify-between items-center text-slate-300">
+                                <span class="text-slate-500">2nd Place:</span>
+                                <span class="font-semibold text-slate-200">Virgil van Dijk <span class="text-[10px] text-slate-500">(Liverpool)</span></span>
+                            </div>
+                            <div class="flex justify-between items-center text-slate-300">
+                                <span class="text-slate-500">3rd Place:</span>
+                                <span class="font-semibold text-slate-200">Cristiano Ronaldo <span class="text-[10px] text-slate-500">(Juventus)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 bg-slate-900/40 p-2.5 rounded-lg">
+                        <strong>Season Stats:</strong> 51 Goals, 22 Assists • European Golden Shoe Winner
+                    </div>
+                </div>
+
+                <!-- 2021 -->
+                <div class="bg-darkbg border border-slate-800 hover:border-messigold rounded-2xl p-6 transition duration-300 shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-3xl font-black text-messigold">2021</span>
+                            <span class="text-xs font-bold text-slate-300 bg-slate-800 px-2.5 py-1 rounded-lg">Barça / PSG / Arg</span>
+                        </div>
+                        <div class="text-center my-4 py-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                            <div class="text-4xl mb-1 group-hover:scale-110 transition">🥇</div>
+                            <h3 class="font-bold text-white text-base">Winner: Lionel Messi</h3>
+                            <div class="text-xs text-messigold font-semibold mt-1">613 Voting Points</div>
+                        </div>
+                        <div class="border-t border-slate-800 pt-3 space-y-2 text-xs">
+                            <div class="flex justify-between items-center text-slate-300">
+                                <span class="text-slate-500">2nd Place:</span>
+                                <span class="font-semibold text-slate-200">Robert Lewandowski <span class="text-[10px] text-slate-500">(Bayern)</span></span>
+                            </div>
+                            <div class="flex justify-between items-center text-slate-300">
+                                <span class="text-slate-500">3rd Place:</span>
+                                <span class="font-semibold text-slate-200">Jorginho <span class="text-[10px] text-slate-500">(Chelsea)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 bg-slate-900/40 p-2.5 rounded-lg">
+                        <strong>Season Stats:</strong> 38 Goals, 18 Assists • Copa América Champion & Player of Tournament
+                    </div>
+                </div>
+
+                <!-- 2023 -->
+                <div class="bg-darkbg border border-slate-800 hover:border-messigold rounded-2xl p-6 transition duration-300 shadow-xl flex flex-col justify-between group">
+                    <div>
+                        <div class="flex justify-between items-center mb-3">
+                            <span class="text-3xl font-black text-messigold">2023</span>
+                            <span class="text-xs font-bold text-pink-400 bg-pink-950/40 px-2.5 py-1 rounded-lg border border-pink-800/50">PSG / Miami / Arg</span>
+                        </div>
+                        <div class="text-center my-4 py-3 bg-slate-900/60 rounded-xl border border-slate-800">
+                            <div class="text-4xl mb-1 group-hover:scale-110 transition">🥇</div>
+                            <h3 class="font-bold text-white text-base">Winner: Lionel Messi</h3>
+                            <div class="text-xs text-messigold font-semibold mt-1">Record 8th Victory</div>
+                        </div>
+                        <div class="border-t border-slate-800 pt-3 space-y-2 text-xs">
+                            <div class="flex justify-between items-center text-slate-300">
+                                <span class="text-slate-500">2nd Place:</span>
+                                <span class="font-semibold text-slate-200">Erling Haaland <span class="text-[10px] text-slate-500">(Man City)</span></span>
+                            </div>
+                            <div class="flex justify-between items-center text-slate-300">
+                                <span class="text-slate-500">3rd Place:</span>
+                                <span class="font-semibold text-slate-200">Kylian Mbappé <span class="text-[10px] text-slate-500">(PSG)</span></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400 bg-slate-900/40 p-2.5 rounded-lg">
+                        <strong>Season Stats:</strong> 38 Goals, 25 Assists • FIFA World Cup Winner & Golden Ball MVP
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: MAJOR TROPHY FINALS SHOWCASE WITH MATCH PHOTOS -->
+    <section id="trophies" class="py-20 bg-darkbg border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4">
+            <div class="text-center mb-14">
+                <span class="text-albiceleste font-bold text-xs uppercase tracking-widest bg-albiceleste/10 px-3.5 py-1 rounded-full border border-albiceleste/20">Historic Finals Showcase</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-3">Major Trophy Finals & Victory Photos</h2>
+                <p class="text-slate-400 text-sm mt-2 max-w-xl mx-auto">Detailed breakdown of Messi's premier international and European trophy-winning finals.</p>
+            </div>
+
+            <!-- Category Filter Tabs -->
+            <div class="flex justify-center gap-2 mb-10 overflow-x-auto pb-2">
+                <button onclick="filterTrophies('all')" id="tab-all" class="trophy-tab bg-albiceleste text-slate-950 font-bold text-xs px-4 py-2 rounded-xl transition">All Finals (7)</button>
+                <button onclick="filterTrophies('wc')" id="tab-wc" class="trophy-tab bg-slate-800 text-slate-300 hover:text-white font-bold text-xs px-4 py-2 rounded-xl transition">World Cup (2022)</button>
+                <button onclick="filterTrophies('ucl')" id="tab-ucl" class="trophy-tab bg-slate-800 text-slate-300 hover:text-white font-bold text-xs px-4 py-2 rounded-xl transition">Champions League (4x)</button>
+                <button onclick="filterTrophies('copa')" id="tab-copa" class="trophy-tab bg-slate-800 text-slate-300 hover:text-white font-bold text-xs px-4 py-2 rounded-xl transition">Copa América (2x)</button>
+            </div>
+
+            <!-- Trophy Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" id="trophyGrid">
+
+                <!-- 1. FIFA World Cup 2022 -->
+                <div class="trophy-card wc bg-cardbg border border-slate-800 hover:border-messigold rounded-2xl overflow-hidden shadow-xl transition group">
+                    <div class="relative cursor-pointer overflow-hidden group/img" onclick="openLightbox('https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=1000&q=80', 'FIFA World Cup 2022 Final: Argentina vs France', 'Lusail Stadium, Qatar (Dec 18, 2022). Score: 3-3 (4-2 on penalties). Messi scored 2 goals in regulation/extra time!')">
+                        <img src="https://images.unsplash.com/photo-1508098682722-e99c43a406b2?auto=format&fit=crop&w=800&q=80" 
+                             onerror="this.src='https://placehold.co/800x450/121824/FFD700?text=FIFA+World+Cup+2022+Final+Victory+Photo'"
+                             alt="World Cup 2022 Final Photo" class="w-full h-48 object-cover transition duration-500 group-hover/img:scale-105">
+                        <span class="absolute top-3 left-3 bg-messigold text-slate-950 font-black text-xs px-3 py-1 rounded-full shadow-md">FIFA World Cup 2022</span>
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition flex items-center justify-center text-white font-bold gap-2">
+                            <i class="fa-solid fa-expand"></i> Enlarge Photo
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-center bg-slate-900/90 p-3.5 rounded-xl border border-slate-800 mb-4">
+                            <div class="text-[11px] font-bold text-slate-400 mb-1">THE FINAL MATCH</div>
+                            <div class="flex items-center justify-center gap-3 text-lg font-black text-white">
+                                <span>🇦🇷 Argentina</span>
+                                <span class="text-messigold font-mono text-xl">3 - 3</span>
+                                <span>France 🇫🇷</span>
+                            </div>
+                            <div class="text-xs text-messigold font-bold mt-1">(Argentina won 4 - 2 on penalties)</div>
+                        </div>
+                        <div class="space-y-2 text-xs text-slate-300">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-albiceleste"></i>
+                                <span><strong>Venue:</strong> Lusail Stadium, Qatar • Dec 18, 2022</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-futbol text-messigold"></i>
+                                <span><strong>Messi Performance:</strong> 2 Goals + Penalty shootout goal.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 2. Copa América 2021 -->
+                <div class="trophy-card copa bg-cardbg border border-slate-800 hover:border-albiceleste rounded-2xl overflow-hidden shadow-xl transition group">
+                    <div class="relative cursor-pointer overflow-hidden group/img" onclick="openLightbox('https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=1000&q=80', 'Copa América 2021 Final: Argentina vs Brazil', 'Maracanã Stadium, Rio de Janeiro (July 10, 2021). Score: 1-0. Goal by Di María.')">
+                        <img src="https://images.unsplash.com/photo-1540747913346-19e32dc3e97e?auto=format&fit=crop&w=800&q=80" 
+                             onerror="this.src='https://placehold.co/800x450/121824/75AADB?text=Copa+America+2021+Final+Maracana'"
+                             alt="Copa América 2021 Final Photo" class="w-full h-48 object-cover transition duration-500 group-hover/img:scale-105">
+                        <span class="absolute top-3 left-3 bg-albiceleste text-slate-950 font-black text-xs px-3 py-1 rounded-full shadow-md">Copa América 2021</span>
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition flex items-center justify-center text-white font-bold gap-2">
+                            <i class="fa-solid fa-expand"></i> Enlarge Photo
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-center bg-slate-900/90 p-3.5 rounded-xl border border-slate-800 mb-4">
+                            <div class="text-[11px] font-bold text-slate-400 mb-1">THE FINAL MATCH</div>
+                            <div class="flex items-center justify-center gap-3 text-lg font-black text-white">
+                                <span>🇦🇷 Argentina</span>
+                                <span class="text-albiceleste font-mono text-xl">1 - 0</span>
+                                <span>Brazil 🇧🇷</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-xs text-slate-300">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-albiceleste"></i>
+                                <span><strong>Venue:</strong> Maracanã Stadium, Rio • July 10, 2021</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-award text-messigold"></i>
+                                <span><strong>Messi Award:</strong> Named Player of the Tournament (4 goals, 5 assists).</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 3. Copa América 2024 -->
+                <div class="trophy-card copa bg-cardbg border border-slate-800 hover:border-albiceleste rounded-2xl overflow-hidden shadow-xl transition group">
+                    <div class="relative cursor-pointer overflow-hidden group/img" onclick="openLightbox('https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=1000&q=80', 'Copa América 2024 Final: Argentina vs Colombia', 'Hard Rock Stadium, Miami (July 14, 2024). Score: 1-0 aet. Extra time goal by Lautaro Martínez!')">
+                        <img src="https://images.unsplash.com/photo-1579952363873-27f3bade9f55?auto=format&fit=crop&w=800&q=80" 
+                             onerror="this.src='https://placehold.co/800x450/121824/75AADB?text=Copa+America+2024+Final+Miami'"
+                             alt="Copa América 2024 Final Photo" class="w-full h-48 object-cover transition duration-500 group-hover/img:scale-105">
+                        <span class="absolute top-3 left-3 bg-albiceleste text-slate-950 font-black text-xs px-3 py-1 rounded-full shadow-md">Copa América 2024</span>
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition flex items-center justify-center text-white font-bold gap-2">
+                            <i class="fa-solid fa-expand"></i> Enlarge Photo
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-center bg-slate-900/90 p-3.5 rounded-xl border border-slate-800 mb-4">
+                            <div class="text-[11px] font-bold text-slate-400 mb-1">THE FINAL MATCH</div>
+                            <div class="flex items-center justify-center gap-3 text-lg font-black text-white">
+                                <span>🇦🇷 Argentina</span>
+                                <span class="text-albiceleste font-mono text-xl">1 - 0</span>
+                                <span>Colombia 🇨🇴</span>
+                            </div>
+                            <div class="text-xs text-slate-400 mt-1">(After Extra Time)</div>
+                        </div>
+                        <div class="space-y-2 text-xs text-slate-300">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-albiceleste"></i>
+                                <span><strong>Venue:</strong> Hard Rock Stadium, Miami • July 14, 2024</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-shield-halved text-emerald-400"></i>
+                                <span><strong>Milestone:</strong> 3rd consecutive major international title.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 4. UCL 2006 -->
+                <div class="trophy-card ucl bg-cardbg border border-slate-800 hover:border-blue-400 rounded-2xl overflow-hidden shadow-xl transition group">
+                    <div class="relative cursor-pointer overflow-hidden group/img" onclick="openLightbox('https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=1000&q=80', '2006 UEFA Champions League Final: Barcelona vs Arsenal', 'Stade de France, Paris (May 17, 2006). Score: 2-1.')">
+                        <img src="https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&w=800&q=80" 
+                             onerror="this.src='https://placehold.co/800x450/121824/3B82F6?text=UCL+2006+Final+Stade+de+France'"
+                             alt="UCL 2006 Final Photo" class="w-full h-48 object-cover transition duration-500 group-hover/img:scale-105">
+                        <span class="absolute top-3 left-3 bg-blue-600 text-white font-black text-xs px-3 py-1 rounded-full shadow-md">UCL 2006</span>
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition flex items-center justify-center text-white font-bold gap-2">
+                            <i class="fa-solid fa-expand"></i> Enlarge Photo
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-center bg-slate-900/90 p-3.5 rounded-xl border border-slate-800 mb-4">
+                            <div class="text-[11px] font-bold text-slate-400 mb-1">THE FINAL MATCH</div>
+                            <div class="flex items-center justify-center gap-3 text-lg font-black text-white">
+                                <span>🇪🇸 Barcelona</span>
+                                <span class="text-blue-400 font-mono text-xl">2 - 1</span>
+                                <span>Arsenal 🏴️</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-xs text-slate-300">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-albiceleste"></i>
+                                <span><strong>Venue:</strong> Stade de France, Paris • May 17, 2006</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-star text-messigold"></i>
+                                <span><strong>Messi Debut Title:</strong> Young prodigy's first European crown.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 5. UCL 2009 -->
+                <div class="trophy-card ucl bg-cardbg border border-slate-800 hover:border-blue-400 rounded-2xl overflow-hidden shadow-xl transition group">
+                    <div class="relative cursor-pointer overflow-hidden group/img" onclick="openLightbox('https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=1000&q=80', '2009 UEFA Champions League Final: Barcelona vs Man United', 'Stadio Olimpico, Rome (May 27, 2009). Score: 2-0. Messi scored famous header!')">
+                        <img src="https://images.unsplash.com/photo-1522778119026-d647f0596c20?auto=format&fit=crop&w=800&q=80" 
+                             onerror="this.src='https://placehold.co/800x450/121824/3B82F6?text=UCL+2009+Final+Rome+Header+Goal'"
+                             alt="UCL 2009 Final Photo" class="w-full h-48 object-cover transition duration-500 group-hover/img:scale-105">
+                        <span class="absolute top-3 left-3 bg-blue-600 text-white font-black text-xs px-3 py-1 rounded-full shadow-md">UCL 2009</span>
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition flex items-center justify-center text-white font-bold gap-2">
+                            <i class="fa-solid fa-expand"></i> Enlarge Photo
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-center bg-slate-900/90 p-3.5 rounded-xl border border-slate-800 mb-4">
+                            <div class="text-[11px] font-bold text-slate-400 mb-1">THE FINAL MATCH</div>
+                            <div class="flex items-center justify-center gap-3 text-lg font-black text-white">
+                                <span>🇪🇸 Barcelona</span>
+                                <span class="text-blue-400 font-mono text-xl">2 - 0</span>
+                                <span>Man United 🏴️</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-xs text-slate-300">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-albiceleste"></i>
+                                <span><strong>Venue:</strong> Stadio Olimpico, Rome • May 27, 2009</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-futbol text-messigold"></i>
+                                <span><strong>Messi Goal:</strong> Iconic looping header goal in 70th minute!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 6. UCL 2011 -->
+                <div class="trophy-card ucl bg-cardbg border border-slate-800 hover:border-blue-400 rounded-2xl overflow-hidden shadow-xl transition group">
+                    <div class="relative cursor-pointer overflow-hidden group/img" onclick="openLightbox('https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=1000&q=80', '2011 UEFA Champions League Final: Barcelona vs Man United', 'Wembley Stadium, London (May 28, 2011). Score: 3-1. Messi scored 25-yard strike!')">
+                        <img src="https://images.unsplash.com/photo-1517466787929-bc90951d0974?auto=format&fit=crop&w=800&q=80" 
+                             onerror="this.src='https://placehold.co/800x450/121824/3B82F6?text=UCL+2011+Wembley+Final+Victory'"
+                             alt="UCL 2011 Final Photo" class="w-full h-48 object-cover transition duration-500 group-hover/img:scale-105">
+                        <span class="absolute top-3 left-3 bg-blue-600 text-white font-black text-xs px-3 py-1 rounded-full shadow-md">UCL 2011</span>
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition flex items-center justify-center text-white font-bold gap-2">
+                            <i class="fa-solid fa-expand"></i> Enlarge Photo
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-center bg-slate-900/90 p-3.5 rounded-xl border border-slate-800 mb-4">
+                            <div class="text-[11px] font-bold text-slate-400 mb-1">THE FINAL MATCH</div>
+                            <div class="flex items-center justify-center gap-3 text-lg font-black text-white">
+                                <span>🇪🇸 Barcelona</span>
+                                <span class="text-blue-400 font-mono text-xl">3 - 1</span>
+                                <span>Man United 🏴️</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-xs text-slate-300">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-albiceleste"></i>
+                                <span><strong>Venue:</strong> Wembley Stadium, London • May 28, 2011</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-futbol text-messigold"></i>
+                                <span><strong>Messi Goal:</strong> Scored rocket strike from outside the box!</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 7. UCL 2015 -->
+                <div class="trophy-card ucl bg-cardbg border border-slate-800 hover:border-blue-400 rounded-2xl overflow-hidden shadow-xl transition group">
+                    <div class="relative cursor-pointer overflow-hidden group/img" onclick="openLightbox('https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&w=1000&q=80', '2015 UEFA Champions League Final: Barcelona vs Juventus', 'Olympiastadion, Berlin (June 6, 2015). Score: 3-1. MSN Trio completed 2nd Treble!')">
+                        <img src="https://images.unsplash.com/photo-1560272564-c83b66b1ad12?auto=format&fit=crop&w=800&q=80" 
+                             onerror="this.src='https://placehold.co/800x450/121824/3B82F6?text=UCL+2015+Berlin+Final+Treble+MSN'"
+                             alt="UCL 2015 Final Photo" class="w-full h-48 object-cover transition duration-500 group-hover/img:scale-105">
+                        <span class="absolute top-3 left-3 bg-blue-600 text-white font-black text-xs px-3 py-1 rounded-full shadow-md">UCL 2015</span>
+                        <div class="absolute inset-0 bg-slate-950/40 opacity-0 group-hover/img:opacity-100 transition flex items-center justify-center text-white font-bold gap-2">
+                            <i class="fa-solid fa-expand"></i> Enlarge Photo
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="text-center bg-slate-900/90 p-3.5 rounded-xl border border-slate-800 mb-4">
+                            <div class="text-[11px] font-bold text-slate-400 mb-1">THE FINAL MATCH</div>
+                            <div class="flex items-center justify-center gap-3 text-lg font-black text-white">
+                                <span>🇪🇸 Barcelona</span>
+                                <span class="text-blue-400 font-mono text-xl">3 - 1</span>
+                                <span>Juventus 🇮🇹</span>
+                            </div>
+                        </div>
+                        <div class="space-y-2 text-xs text-slate-300">
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-location-dot text-albiceleste"></i>
+                                <span><strong>Venue:</strong> Olympiastadion, Berlin • June 6, 2015</span>
+                            </div>
+                            <div class="flex items-center gap-2">
+                                <i class="fa-solid fa-crown text-messigold"></i>
+                                <span><strong>Treble:</strong> Completed Barcelona's 2nd European Treble.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 6: INTERACTIVE FAN QUIZ WITH AUDIO SYNTH & CONFETTI -->
+    <section id="quiz" class="py-20 bg-cardbg border-t border-slate-800">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="text-center mb-10">
+                <span class="bg-emerald-500/10 text-emerald-400 font-bold text-xs uppercase tracking-widest px-3.5 py-1 rounded-full border border-emerald-500/20">Interactive Trivia</span>
+                <h2 class="text-3xl sm:text-4xl font-black text-white mt-3">The Messi Master Quiz 🎯</h2>
+                <p class="text-slate-400 text-sm mt-2">Test your knowledge on Messi's biography, World Cup 2022 journey, and team history!</p>
+            </div>
+
+            <!-- Quiz Container Card -->
+            <div class="bg-darkbg border border-slate-800 rounded-3xl p-6 sm:p-8 shadow-2xl relative">
+                <div id="quizContainer">
+                    <div class="flex justify-between items-center mb-6 text-xs font-bold text-slate-400 border-b border-slate-800 pb-4">
+                        <span id="questionTracker">Question 1 of 5</span>
+                        <span id="scoreTracker" class="text-albiceleste font-extrabold text-sm">Score: 0</span>
+                    </div>
+
+                    <h3 id="quizQuestion" class="text-xl font-extrabold text-white mb-6 leading-snug">Loading question...</h3>
+
+                    <!-- Quiz Options -->
+                    <div id="quizOptions" class="space-y-3 mb-6"></div>
+
+                    <!-- Feedback Box -->
+                    <div id="quizFeedback" class="hidden p-4 rounded-xl text-sm font-semibold text-center mb-6 transition-all duration-300"></div>
+
+                    <!-- Next Button -->
+                    <button id="nextBtn" onclick="nextQuestion()" class="hidden w-full bg-gradient-to-r from-albiceleste to-sky-400 hover:brightness-110 text-slate-950 font-black py-3.5 rounded-xl transition shadow-lg flex items-center justify-center gap-2">
+                        Next Question <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Final Score Screen -->
+                <div id="resultsScreen" class="hidden text-center py-8">
+                    <div class="text-6xl mb-4">🏆</div>
+                    <h3 class="text-3xl font-black text-white mb-2">Quiz Complete!</h3>
+                    <p id="finalScoreText" class="text-slate-300 text-lg mb-8">You scored 5 out of 5!</p>
+                    <div class="flex justify-center gap-4">
+                        <button onclick="restartQuiz()" class="bg-gradient-to-r from-albiceleste to-sky-400 text-slate-950 font-black px-6 py-3.5 rounded-xl shadow-lg hover:brightness-110 transition flex items-center gap-2">
+                            <i class="fa-solid fa-rotate-right"></i> Try Again
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 bg-darkbg border-t border-slate-800 text-center text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="font-semibold text-slate-400 mb-1">Lionel Messi Interactive Biography App</p>
+            <p>Designed for football fans, learning web development & sharing with friends ⚽</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        /* ----------------------------------------------------
+           1. LIGHTBOX MODAL FUNCTIONALITY
+        ---------------------------------------------------- */
+        function openLightbox(imgUrl, title, caption) {
+            const modal = document.getElementById('lightboxModal');
+            const img = document.getElementById('lightboxImage');
+            const t = document.getElementById('lightboxTitle');
+            const c = document.getElementById('lightboxCaption');
+
+            img.src = imgUrl;
+            img.onerror = function() {
+                this.src = 'https://placehold.co/800x450/121824/FFD700?text=' + encodeURIComponent(title);
+            };
+            t.textContent = title;
+            c.textContent = caption;
+
+            modal.classList.remove('hidden');
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightboxModal').classList.add('hidden');
+        }
+
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeLightbox();
+        });
+        document.getElementById('lightboxModal').addEventListener('click', (e) => {
+            if (e.target.id === 'lightboxModal') closeLightbox();
+        });
+
+        /* ----------------------------------------------------
+           2. SQUAD TOGGLE (2022 vs 2026)
+        ---------------------------------------------------- */
+        function switchSquad(year) {
+            const grid2022 = document.getElementById('squad2022Grid');
+            const grid2026 = document.getElementById('squad2026Grid');
+            const tab2022 = document.getElementById('squadTab2022');
+            const tab2026 = document.getElementById('squadTab2026');
+
+            if (year === '2022') {
+                grid2022.classList.remove('hidden');
+                grid2026.classList.add('hidden');
+                tab2022.className = "bg-messigold text-slate-950 font-black text-xs sm:text-sm px-6 py-3 rounded-xl transition shadow-lg flex items-center gap-2";
+                tab2026.className = "bg-slate-800 text-slate-300 hover:text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-xl transition flex items-center gap-2";
+            } else {
+                grid2022.classList.add('hidden');
+                grid2026.classList.remove('hidden');
+                tab2026.className = "bg-sky-400 text-slate-950 font-black text-xs sm:text-sm px-6 py-3 rounded-xl transition shadow-lg flex items-center gap-2";
+                tab2022.className = "bg-slate-800 text-slate-300 hover:text-white font-bold text-xs sm:text-sm px-6 py-3 rounded-xl transition flex items-center gap-2";
+            }
+        }
+
+        /* ----------------------------------------------------
+           3. WEB AUDIO SYNTHESIZER SOUNDS
+        ---------------------------------------------------- */
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+
+        function playCorrectSound() {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(523.25, audioCtx.currentTime); // C5
+            osc.frequency.setValueAtTime(659.25, audioCtx.currentTime + 0.1); // E5
+            osc.frequency.setValueAtTime(783.99, audioCtx.currentTime + 0.2); // G5
+            gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.4);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.4);
+        }
+
+        function playIncorrectSound() {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            osc.type = 'sawtooth';
+            osc.frequency.setValueAtTime(220, audioCtx.currentTime); // A3
+            osc.frequency.setValueAtTime(196, audioCtx.currentTime + 0.15); // G3
+            gain.gain.setValueAtTime(0.2, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 0.35);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start();
+            osc.stop(audioCtx.currentTime + 0.35);
+        }
+
+        function playCheerSound() {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+            const bufferSize = audioCtx.sampleRate * 1.5;
+            const buffer = audioCtx.createBuffer(1, bufferSize, audioCtx.sampleRate);
+            const data = buffer.getChannelData(0);
+            for (let i = 0; i < bufferSize; i++) {
+                data[i] = Math.random() * 2 - 1;
+            }
+            const noise = audioCtx.createBufferSource();
+            noise.buffer = buffer;
+            const filter = audioCtx.createBiquadFilter();
+            filter.type = 'bandpass';
+            filter.frequency.value = 800;
+            filter.Q.value = 1.0;
+            const gain = audioCtx.createGain();
+            gain.gain.setValueAtTime(0.01, audioCtx.currentTime);
+            gain.gain.linearRampToValueAtTime(0.25, audioCtx.currentTime + 0.3);
+            gain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + 1.5);
+            noise.connect(filter);
+            filter.connect(gain);
+            gain.connect(audioCtx.destination);
+            noise.start();
+        }
+
+        /* ----------------------------------------------------
+           4. TROPHY FILTER SYSTEM
+        ---------------------------------------------------- */
+        function filterTrophies(type) {
+            const cards = document.querySelectorAll('.trophy-card');
+            const tabs = document.querySelectorAll('.trophy-tab');
+            
+            tabs.forEach(tab => {
+                tab.className = "trophy-tab bg-slate-800 text-slate-300 hover:text-white font-bold text-xs px-4 py-2 rounded-xl transition";
+            });
+
+            const activeTab = document.getElementById(`tab-${type}`);
+            if (activeTab) {
+                activeTab.className = "trophy-tab bg-albiceleste text-slate-950 font-bold text-xs px-4 py-2 rounded-xl transition";
+            }
+
+            cards.forEach(card => {
+                if (type === 'all' || card.classList.contains(type)) {
+                    card.classList.remove('hidden');
+                } else {
+                    card.classList.add('hidden');
+                }
+            });
+        }
+
+        /* ----------------------------------------------------
+           5. FAN TRIVIA QUIZ
+        ---------------------------------------------------- */
+        const quizQuestions = [
+            {
+                question: "Which goalkeeper made the 123rd-minute foot save vs Kolo Muani in the 2022 World Cup Final?",
+                options: ["Franco Armani", "Emiliano Martínez", "Gerónimo Rulli", "Willy Caballero"],
+                correct: 1
+            },
+            {
+                question: "Who scored the 2nd goal for Argentina in the 2022 World Cup Final after a sweeping counter-attack?",
+                options: ["Ángel Di María", "Julián Álvarez", "Rodrigo De Paul", "Alexis Mac Allister"],
+                correct: 0
+            },
+            {
+                question: "Against which country did Messi execute his famous dribble turning defender Joško Gvardiol in the 2022 Semi-Final?",
+                options: ["Netherlands", "Croatia", "Australia", "Poland"],
+                correct: 1
+            },
+            {
+                question: "How many goals did Julián Álvarez score during the 2022 FIFA World Cup tournament?",
+                options: ["2 Goals", "3 Goals", "4 Goals", "6 Goals"],
+                correct: 2
+            },
+            {
+                question: "Who scored the winning 4th penalty kick in the final shootout against France to seal the World Cup?",
+                options: ["Paulo Dybala", "Leandro Paredes", "Gonzalo Montiel", "Lionel Messi"],
+                correct: 2
+            }
+        ];
+
+        let currentQIndex = 0;
+        let score = 0;
+        let answered = false;
+
+        function renderQuestion() {
+            answered = false;
+            const q = quizQuestions[currentQIndex];
+            
+            document.getElementById('questionTracker').textContent = `Question ${currentQIndex + 1} of ${quizQuestions.length}`;
+            document.getElementById('scoreTracker').textContent = `Score: ${score}`;
+            document.getElementById('quizQuestion').textContent = q.question;
+
+            const optionsContainer = document.getElementById('quizOptions');
+            optionsContainer.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-xl bg-cardbg border border-slate-800 hover:border-albiceleste font-medium text-slate-200 transition flex justify-between items-center";
+                btn.innerHTML = `<span>${opt}</span> <i class="fa-regular fa-circle text-slate-600"></i>`;
+                btn.onclick = () => selectAnswer(idx, btn);
+                optionsContainer.appendChild(btn);
+            });
+
+            document.getElementById('quizFeedback').classList.add('hidden');
+            document.getElementById('nextBtn').classList.add('hidden');
+        }
+
+        function selectAnswer(selectedIndex, btnElement) {
+            if (answered) return;
+            answered = true;
+
+            const q = quizQuestions[currentQIndex];
+            const feedbackBox = document.getElementById('quizFeedback');
+            const options = document.getElementById('quizOptions').children;
+
+            if (selectedIndex === q.correct) {
+                score++;
+                playCorrectSound();
+                document.getElementById('scoreTracker').textContent = `Score: ${score}`;
+                btnElement.className = "w-full text-left p-4 rounded-xl bg-emerald-950/80 border-2 border-emerald-500 font-bold text-emerald-200 transition flex justify-between items-center";
+                btnElement.innerHTML = `<span>${q.options[selectedIndex]}</span> <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>`;
+                
+                feedbackBox.className = "p-4 rounded-xl text-sm font-semibold text-center mb-6 bg-emerald-950/60 border border-emerald-800 text-emerald-300";
+                feedbackBox.textContent = "✨ GOAL! Outstanding answer!";
+            } else {
+                playIncorrectSound();
+                btnElement.className = "w-full text-left p-4 rounded-xl bg-rose-950/80 border-2 border-rose-500 font-bold text-rose-200 transition flex justify-between items-center";
+                btnElement.innerHTML = `<span>${q.options[selectedIndex]}</span> <i class="fa-solid fa-circle-xmark text-rose-400 text-lg"></i>`;
+                
+                options[q.correct].className = "w-full text-left p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/50 font-semibold text-emerald-300 transition flex justify-between items-center";
+                
+                feedbackBox.className = "p-4 rounded-xl text-sm font-semibold text-center mb-6 bg-rose-950/60 border border-rose-800 text-rose-300";
+                feedbackBox.textContent = `Off the post! The correct answer was "${q.options[q.correct]}".`;
+            }
+
+            feedbackBox.classList.remove('hidden');
+            document.getElementById('nextBtn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQIndex++;
+            if (currentQIndex < quizQuestions.length) {
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quizContainer').classList.add('hidden');
+            document.getElementById('resultsScreen').classList.remove('hidden');
+            document.getElementById('finalScoreText').textContent = `You scored ${score} out of ${quizQuestions.length}!`;
+            
+            playCheerSound();
+            launchConfetti();
+        }
+
+        function restartQuiz() {
+            currentQIndex = 0;
+            score = 0;
+            document.getElementById('resultsScreen').classList.add('hidden');
+            document.getElementById('quizContainer').classList.remove('hidden');
+            renderQuestion();
+        }
+
+        renderQuestion();
+
+        /* ----------------------------------------------------
+           6. CONFETTI ANIMATION SYSTEM
+        ---------------------------------------------------- */
+        function launchConfetti() {
+            const canvas = document.getElementById('confettiCanvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const pieces = [];
+            const colors = ['#75AADB', '#FFD700', '#10B981', '#EC4899', '#FFFFFF', '#3B82F6'];
+
+            for (let i = 0; i < 120; i++) {
+                pieces.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    size: Math.random() * 9 + 4,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speedY: Math.random() * 3.5 + 2,
+                    speedX: Math.random() * 2 - 1,
+                    rotation: Math.random() * 360
+                });
+            }
+
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                pieces.forEach((p) => {
+                    p.y += p.speedY;
+                    p.x += p.speedX;
+                    p.rotation += 2;
+
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate((p.rotation * Math.PI) / 180);
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                    ctx.restore();
+                });
+
+                if (pieces.some(p => p.y < canvas.height)) {
+                    requestAnimationFrame(animate);
+                } else {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                }
+            }
+            animate();
+        }
+    </script>
+</body>
+</html>
