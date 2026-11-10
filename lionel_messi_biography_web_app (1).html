@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lionel Messi - The Story of a Legend ⚽</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts: Inter -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        albiceleste: '#75AADB', // Argentina Sky Blue
+                        albipale: '#E8F2FA',
+                        messigold: '#FFD700',
+                        barcapurple: '#1E1B4B',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Smooth Scrolling */
+        html {
+            scroll-behavior: smooth;
+        }
+        /* Custom Glowing Card Animations */
+        .gold-glow {
+            box-shadow: 0 0 20px rgba(255, 215, 0, 0.4);
+        }
+        .sky-glow {
+            box-shadow: 0 0 20px rgba(117, 170, 219, 0.4);
+        }
+        /* Confetti canvas overlay */
+        #confettiCanvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            pointer-events: none;
+            z-index: 100;
+        }
+    </style>
+</head>
+<body class="bg-slate-900 text-slate-100 font-sans min-h-screen selection:bg-albiceleste selection:text-slate-900">
+
+    <!-- Confetti Canvas -->
+    <canvas id="confettiCanvas"></canvas>
+
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-2 text-xl font-black text-white hover:text-albiceleste transition">
+                <span class="bg-gradient-to-r from-albiceleste to-sky-200 text-slate-900 px-2.5 py-1 rounded-lg text-lg">10</span>
+                <span>Messi<span class="text-albiceleste">Story</span></span>
+            </a>
+            <nav class="hidden md:flex gap-6 text-sm font-semibold text-slate-300">
+                <a href="#facts" class="hover:text-albiceleste transition">Fast Facts</a>
+                <a href="#timeline" class="hover:text-albiceleste transition">Career Story</a>
+                <a href="#trophies" class="hover:text-albiceleste transition">Trophies</a>
+                <a href="#quiz" class="hover:text-albiceleste transition">Fun Quiz</a>
+            </nav>
+            <a href="#quiz" class="bg-gradient-to-r from-albiceleste to-sky-500 text-slate-900 font-bold px-4 py-2 rounded-xl text-sm shadow-md hover:brightness-110 transition flex items-center gap-2">
+                <i class="fa-solid fa-gamepad">="fa-gamepad"></i> Play Quiz
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Banner -->
+    <section class="relative overflow-hidden pt-12 pb-20 bg-gradient-to-b from-slate-900 via-slate-800 to-slate-900">
+        <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#75AADB_1px,transparent_1px)] [background-size:16px_16px]"></div>
+        
+        <div class="max-w-6xl mx-auto px-4 text-center relative z-10">
+            <!-- Badge -->
+            <div class="inline-flex items-center gap-2 bg-slate-800/80 border border-slate-700 px-4 py-1.5 rounded-full text-xs font-semibold text-messigold mb-6 shadow-inner">
+                <i class="fa-solid fa-crown"></i> Lionel Andrés Messi • The G.O.A.T. 🐐
+            </div>
+            
+            <h1 class="text-4xl md:text-6xl lg:text-7xl font-extrabold tracking-tight text-white mb-6">
+                From Rosario Street Kid to <br class="hidden sm:inline">
+                <span class="bg-clip-text text-transparent bg-gradient-to-r from-albiceleste via-white to-messigold">
+                    World Champion 🏆
+                </span>
+            </h1>
+            
+            <p class="max-w-2xl mx-auto text-slate-300 text-base sm:text-lg mb-8 leading-relaxed">
+                Welcome! Learn all about Lionel Messi's inspiring journey—from overcoming health challenges as a child to winning the ultimate prize in football.
+            </p>
+
+            <div class="flex flex-wrap justify-center gap-4 mb-12">
+                <a href="#timeline" class="bg-albiceleste hover:bg-sky-400 text-slate-950 font-extrabold px-6 py-3.5 rounded-xl transition transform hover:-translate-y-0.5 shadow-lg flex items-center gap-2">
+                    <i class="fa-solid fa-book-open"></i> Explore Timeline
+                </a>
+                <a href="#facts" class="bg-slate-800 hover:bg-slate-700 text-white font-semibold px-6 py-3.5 rounded-xl border border-slate-700 transition flex items-center gap-2">
+                    <i class="fa-solid fa-bolt text-messigold"></i> Quick Facts
+                </a>
+            </div>
+
+            <!-- Hero Stats Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-4 max-w-4xl mx-auto">
+                <div class="bg-slate-800/60 border border-slate-700/60 p-4 rounded-2xl">
+                    <div class="text-3xl font-black text-messigold mb-1">8x</div>
+                    <div class="text-xs text-slate-400 font-medium">Ballon d'Or Awards</div>
+                </div>
+                <div class="bg-slate-800/60 border border-slate-700/60 p-4 rounded-2xl">
+                    <div class="text-3xl font-black text-albiceleste mb-1">1x</div>
+                    <div class="text-xs text-slate-400 font-medium">World Cup Champion</div>
+                </div>
+                <div class="bg-slate-800/60 border border-slate-700/60 p-4 rounded-2xl">
+                    <div class="text-3xl font-black text-emerald-400 mb-1">800+</div>
+                    <div class="text-xs text-slate-400 font-medium">Career Goals</div>
+                </div>
+                <div class="bg-slate-800/60 border border-slate-700/60 p-4 rounded-2xl">
+                    <div class="text-3xl font-black text-purple-400 mb-1">#10</div>
+                    <div class="text-xs text-slate-400 font-medium">Iconic Jersey Number</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fast Facts Section -->
+    <section id="facts" class="py-16 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold text-white mb-2">⚡ Messi Fast Facts</h2>
+                <p class="text-slate-400 text-sm">Quick bite-sized details every fan should know!</p>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Fact 1 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-albiceleste/50 transition">
+                    <div class="w-12 h-12 bg-albiceleste/10 rounded-xl flex items-center justify-center text-albiceleste text-xl mb-4">
+                        <i class="fa-solid fa-cake-candles"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">Born & Raised</h3>
+                    <p class="text-slate-400 text-sm">June 24, 1987 in Rosario, Argentina. He began playing football at age 4!</p>
+                </div>
+
+                <!-- Fact 2 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-messigold/50 transition">
+                    <div class="w-12 h-12 bg-messigold/10 rounded-xl flex items-center justify-center text-messigold text-xl mb-4">
+                        <i class="fa-solid fa-bug"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">Nickname: "La Pulga"</h3>
+                    <p class="text-slate-400 text-sm">Means "The Flea" in Spanish because he is short, quick, and hard for defenders to catch!</p>
+                </div>
+
+                <!-- Fact 3 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-emerald-500/50 transition">
+                    <div class="w-12 h-12 bg-emerald-500/10 rounded-xl flex items-center justify-center text-emerald-400 text-xl mb-4">
+                        <i class="fa-solid fa-heart"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">Point to the Sky</h3>
+                    <p class="text-slate-400 text-sm">Whenever he scores, he points two fingers to the sky to dedicate his goals to his late grandmother, Celia.</p>
+                </div>
+
+                <!-- Fact 4 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-purple-500/50 transition">
+                    <div class="w-12 h-12 bg-purple-500/10 rounded-xl flex items-center justify-center text-purple-400 text-xl mb-4">
+                        <i class="fa-solid fa-hand-holding-medical"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">Overcoming Obstacles</h3>
+                    <p class="text-slate-400 text-sm">As a child, he was diagnosed with Growth Hormone Deficiency. FC Barcelona agreed to pay for his medical treatment.</p>
+                </div>
+
+                <!-- Fact 5 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-rose-500/50 transition">
+                    <div class="w-12 h-12 bg-rose-500/10 rounded-xl flex items-center justify-center text-rose-400 text-xl mb-4">
+                        <i class="fa-solid fa-[#000] fa-paperclip"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">The Napkin Contract</h3>
+                    <p class="text-slate-400 text-sm">His first contract with Barcelona was written on a paper napkin at a tennis club restaurant!</p>
+                </div>
+
+                <!-- Fact 6 -->
+                <div class="bg-slate-900 border border-slate-800 rounded-2xl p-6 hover:border-sky-400/50 transition">
+                    <div class="w-12 h-12 bg-sky-400/10 rounded-xl flex items-center justify-center text-sky-400 text-xl mb-4">
+                        <i class="fa-solid fa-shirt"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-white mb-1">Clubs Played For</h3>
+                    <p class="text-slate-400 text-sm">Grandoli, Newell's Old Boys, FC Barcelona (2004–2021), PSG (2021–2023), Inter Miami (2023–Present).</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Career Timeline -->
+    <section id="timeline" class="py-16 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-albiceleste font-semibold text-xs uppercase tracking-wider">His Journey</span>
+                <h2 class="text-3xl font-black text-white mt-1">Interactive Career Timeline</h2>
+                <p class="text-slate-400 text-sm mt-2">Click on any chapter below to read the full story!</p>
+            </div>
+
+            <!-- Timeline Cards Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Milestone 1 -->
+                <div onclick="openModal('rosario')" class="group cursor-pointer bg-slate-800/70 border border-slate-700/80 hover:border-albiceleste rounded-2xl p-6 transition duration-300 transform hover:-translate-y-1 relative">
+                    <div class="text-xs font-bold text-albiceleste uppercase tracking-wider mb-2">1987 - 2000</div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-albiceleste transition mb-2">1. Early Days in Rosario</h3>
+                    <p class="text-slate-300 text-sm line-clamp-3">Falling in love with the ball, playing for Grandoli and Newell's Old Boys, and overcoming growth challenges.</p>
+                    <div class="mt-4 flex items-center text-xs font-bold text-albiceleste gap-1">
+                        Read Story <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition"></i>
+                    </div>
+                </div>
+
+                <!-- Milestone 2 -->
+                <div onclick="openModal('napkin')" class="group cursor-pointer bg-slate-800/70 border border-slate-700/80 hover:border-messigold rounded-2xl p-6 transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-xs font-bold text-messigold uppercase tracking-wider mb-2">Year 2000</div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-messigold transition mb-2">2. The Famous Napkin Contract</h3>
+                    <p class="text-slate-300 text-sm line-clamp-3">A 13-year-old Messi moves to Spain to join FC Barcelona's famous youth academy, La Masia.</p>
+                    <div class="mt-4 flex items-center text-xs font-bold text-messigold gap-1">
+                        Read Story <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition"></i>
+                    </div>
+                </div>
+
+                <!-- Milestone 3 -->
+                <div onclick="openModal('barcelona')" class="group cursor-pointer bg-slate-800/70 border border-slate-700/80 hover:border-blue-400 rounded-2xl p-6 transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">2004 - 2021</div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-blue-400 transition mb-2">3. Barcelona Supremacy</h3>
+                    <p class="text-slate-300 text-sm line-clamp-3">Scoring 672 goals, winning 10 La Liga titles, 4 Champions League trophies, and 6 Ballon d'Ors.</p>
+                    <div class="mt-4 flex items-center text-xs font-bold text-blue-400 gap-1">
+                        Read Story <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition"></i>
+                    </div>
+                </div>
+
+                <!-- Milestone 4 -->
+                <div onclick="openModal('worldcup')" class="group cursor-pointer bg-slate-800/70 border border-slate-700/80 hover:border-emerald-400 rounded-2xl p-6 transition duration-300 transform hover:-translate-y-1">
+                    <div class="text-xs font-bold text-emerald-400 uppercase tracking-wider mb-2">Qatar 2022</div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition mb-2">4. World Cup Glory 🏆</h3>
+                    <p class="text-slate-300 text-sm line-clamp-3">The magical night in Qatar: Messi leads Argentina to win the FIFA World Cup against France.</p>
+                    <div class="mt-4 flex items-center text-xs font-bold text-emerald-400 gap-1">
+                        Read Story <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition"></i>
+                    </div>
+                </div>
+
+                <!-- Milestone 5 -->
+                <div onclick="openModal('miami')" class="group cursor-pointer bg-slate-800/70 border border-slate-700/80 hover:border-pink-400 rounded-2xl p-6 transition duration-300 transform hover:-translate-y-1 md:col-span-2">
+                    <div class="text-xs font-bold text-pink-400 uppercase tracking-wider mb-2">2023 - Present</div>
+                    <h3 class="text-xl font-bold text-white group-hover:text-pink-400 transition mb-2">5. Inter Miami & The Pink Era 💗</h3>
+                    <p class="text-slate-300 text-sm line-clamp-3">Moving to North America, capturing the Leagues Cup, and bringing football fever to Miami!</p>
+                    <div class="mt-4 flex items-center text-xs font-bold text-pink-400 gap-1">
+                        Read Story <i class="fa-solid fa-arrow-right text-xs group-hover:translate-x-1 transition"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Trophy Room Showcase -->
+    <section id="trophies" class="py-16 bg-slate-950 border-t border-slate-800">
+        <div class="max-w-6xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-black text-white mb-2">🏆 Major Trophy Cabinet</h2>
+            <p class="text-slate-400 text-sm mb-10">Lionel Messi is the most decorated football player in history!</p>
+
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Trophy 1 -->
+                <div class="bg-gradient-to-b from-slate-900 to-slate-800 border border-slate-800 p-6 rounded-2xl flex flex-col items-center">
+                    <div class="text-4xl mb-3">🏆</div>
+                    <div class="text-2xl font-black text-messigold">1</div>
+                    <div class="text-sm font-bold text-white">FIFA World Cup</div>
+                    <div class="text-xs text-slate-400 mt-1">2022 Qatar</div>
+                </div>
+                <!-- Trophy 2 -->
+                <div class="bg-gradient-to-b from-slate-900 to-slate-800 border border-slate-800 p-6 rounded-2xl flex flex-col items-center">
+                    <div class="text-4xl mb-3">⚽</div>
+                    <div class="text-2xl font-black text-messigold">8</div>
+                    <div class="text-sm font-bold text-white">Ballon d'Or</div>
+                    <div class="text-xs text-slate-400 mt-1">Best Player in World</div>
+                </div>
+                <!-- Trophy 3 -->
+                <div class="bg-gradient-to-b from-slate-900 to-slate-800 border border-slate-800 p-6 rounded-2xl flex flex-col items-center">
+                    <div class="text-4xl mb-3">🇪🇺</div>
+                    <div class="text-2xl font-black text-messigold">4</div>
+                    <div class="text-sm font-bold text-white">UEFA Champions League</div>
+                    <div class="text-xs text-slate-400 mt-1">2006, 2009, 2011, 2015</div>
+                </div>
+                <!-- Trophy 4 -->
+                <div class="bg-gradient-to-b from-slate-900 to-slate-800 border border-slate-800 p-6 rounded-2xl flex flex-col items-center">
+                    <div class="text-4xl mb-3">🇦🇷</div>
+                    <div class="text-2xl font-black text-messigold">2</div>
+                    <div class="text-sm font-bold text-white">Copa América</div>
+                    <div class="text-xs text-slate-400 mt-1">2021, 2024</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Fun Interactive Quiz Section -->
+    <section id="quiz" class="py-16 bg-slate-900 border-t border-slate-800">
+        <div class="max-w-3xl mx-auto px-4">
+            <div class="text-center mb-8">
+                <span class="bg-messigold/20 text-messigold text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Test Your Knowledge</span>
+                <h2 class="text-3xl font-black text-white mt-2">The Messi Fan Quiz 🎯</h2>
+                <p class="text-slate-400 text-sm mt-1">Answer 3 questions and test if you are a true Messi fan!</p>
+            </div>
+
+            <!-- Quiz Card -->
+            <div class="bg-slate-800 border border-slate-700 rounded-3xl p-6 md:p-8 shadow-2xl relative">
+                <div id="quizContainer">
+                    <!-- Dynamic Question Area -->
+                    <div class="flex justify-between items-center mb-4 text-xs font-bold text-slate-400">
+                        <span id="questionTracker">Question 1 of 3</span>
+                        <span id="scoreTracker" class="text-albiceleste">Score: 0</span>
+                    </div>
+
+                    <h3 id="quizQuestion" class="text-xl font-bold text-white mb-6">Loading question...</h3>
+
+                    <!-- Options -->
+                    <div id="quizOptions" class="space-y-3 mb-6">
+                        <!-- Options generated by JS -->
+                    </div>
+
+                    <!-- Feedback Box -->
+                    <div id="quizFeedback" class="hidden p-4 rounded-xl text-sm font-semibold text-center mb-4"></div>
+
+                    <!-- Action Button -->
+                    <button id="nextBtn" onclick="nextQuestion()" class="hidden w-full bg-albiceleste hover:bg-sky-400 text-slate-950 font-extrabold py-3 rounded-xl transition shadow-lg">
+                        Next Question <i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+
+                <!-- Final Results Screen (Hidden by Default) -->
+                <div id="resultsScreen" class="hidden text-center py-6">
+                    <div class="text-5xl mb-4">🎉</div>
+                    <h3 class="text-2xl font-black text-white mb-2">Quiz Completed!</h3>
+                    <p id="finalScoreText" class="text-slate-300 mb-6">You scored 3 out of 3!</p>
+                    <button onclick="restartQuiz()" class="bg-gradient-to-r from-albiceleste to-sky-400 text-slate-950 font-bold px-6 py-3 rounded-xl shadow-lg hover:brightness-110 transition">
+                        <i class="fa-solid fa-rotate-right"></i> Try Again
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Detail Modal for Timeline -->
+    <div id="timelineModal" class="fixed inset-0 bg-slate-950/80 backdrop-blur-sm z-50 hidden flex items-center justify-center p-4">
+        <div class="bg-slate-900 border border-slate-700 rounded-3xl max-w-lg w-full p-6 relative shadow-2xl animate-fade-in">
+            <button onclick="closeModal()" class="absolute top-4 right-4 text-slate-400 hover:text-white text-xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <div id="modalContent">
+                <!-- Dynamic Content -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="py-8 bg-slate-950 border-t border-slate-800 text-center text-xs text-slate-500">
+        <div class="max-w-6xl mx-auto px-4">
+            <p class="mb-2">Created for beginner computer learners & Lionel Messi fans ⚽</p>
+            <p>Made with HTML, Tailwind CSS & JavaScript</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        /* ----------------------------------------------------
+           1. TIMELINE MODAL DATA & FUNCTIONS
+        ---------------------------------------------------- */
+        const timelineData = {
+            rosario: {
+                title: "1. Early Days in Rosario (1987-2000)",
+                badge: "Childhood Era",
+                color: "text-albiceleste",
+                content: `
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        Lionel Messi was born in Rosario, Argentina. At just 4 years old, he joined local club <strong>Grandoli</strong>, coached by his father. Later, he joined his beloved hometown team <strong>Newell's Old Boys</strong>.
+                    </p>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        At age 11, he was diagnosed with Growth Hormone Deficiency, requiring costly medication. Despite his small height, his incredible talent attracted international attention!
+                    </p>
+                `
+            },
+            napkin: {
+                title: "2. The Napkin Contract (2000)",
+                badge: "Turning Point",
+                color: "text-messigold",
+                content: `
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        FC Barcelona's sporting director, Charly Rexach, was so amazed by 13-year-old Messi's trial that he wanted to sign him immediately.
+                    </p>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        Without official paper nearby, he wrote a contract binding the club to sign Messi on a <strong>paper napkin</strong> at a tennis club. Barcelona agreed to pay for his medical treatment, changing football history forever!
+                    </p>
+                `
+            },
+            barcelona: {
+                title: "3. Barcelona Golden Era (2004-2021)",
+                badge: "Peak Dominance",
+                color: "text-blue-400",
+                content: `
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        Messi spent 17 magical senior seasons at Barcelona. Alongside stars like Ronaldinho, Xavi, and Iniesta, he conquered European football.
+                    </p>
+                    <ul class="list-disc list-inside text-slate-300 text-sm space-y-1 mb-4">
+                        <li><strong>672 Goals:</strong> Most goals ever scored for a single club.</li>
+                        <li><strong>10 La Liga Titles:</strong> Dominating Spanish football.</li>
+                        <li><strong>91 Goals in 2012:</strong> World record for most goals in a calendar year!</li>
+                    </ul>
+                `
+            },
+            worldcup: {
+                title: "4. World Cup Glory in Qatar (2022)",
+                badge: "Dream Realized",
+                color: "text-emerald-400",
+                content: `
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        After years of international heartbreak, Messi led Argentina to win the <strong>2022 FIFA World Cup</strong> in Qatar!
+                    </p>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        He scored 7 goals in the tournament, including 2 goals in the dramatic final against France. He was awarded the Golden Ball as the tournament's best player!
+                    </p>
+                `
+            },
+            miami: {
+                title: "5. Inter Miami & Pink Era (2023-Present)",
+                badge: "New Chapter",
+                color: "text-pink-400",
+                content: `
+                    <p class="text-slate-300 text-sm leading-relaxed mb-4">
+                        In summer 2023, Messi signed with <strong>Inter Miami CF</strong> in the United States MLS.
+                    </p>
+                    <p class="text-slate-300 text-sm leading-relaxed">
+                        In his very first month, he led the team to win their first-ever trophy, the <strong>Leagues Cup 2023</strong>, scoring spectacular free-kicks and filling stadiums across America!
+                    </p>
+                `
+            }
+        };
+
+        function openModal(key) {
+            const data = timelineData[key];
+            if (!data) return;
+
+            const modalContent = document.getElementById('modalContent');
+            modalContent.innerHTML = `
+                <span class="text-xs font-bold uppercase tracking-wider ${data.color} mb-1 block">${data.badge}</span>
+                <h3 class="text-2xl font-black text-white mb-4">${data.title}</h3>
+                <div class="border-t border-slate-800 pt-4">
+                    ${data.content}
+                </div>
+            `;
+            document.getElementById('timelineModal').classList.remove('hidden');
+        }
+
+        function closeModal() {
+            document.getElementById('timelineModal').classList.add('hidden');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('timelineModal').addEventListener('click', (e) => {
+            if (e.target.id === 'timelineModal') closeModal();
+        });
+
+        /* ----------------------------------------------------
+           2. QUIZ INTERACTION SYSTEM
+        ---------------------------------------------------- */
+        const quizQuestions = [
+            {
+                question: "In which city was Lionel Messi born?",
+                options: ["Buenos Aires", "Rosario", "Barcelona", "Madrid"],
+                correct: 1
+            },
+            {
+                question: "What unique item was Messi's first Barcelona contract written on?",
+                options: ["A Paper Napkin", "A Football", "A Restaurant Menu", "A Postcard"],
+                correct: 0
+            },
+            {
+                question: "Which year did Messi win the FIFA World Cup with Argentina?",
+                options: ["2014", "2018", "2022", "2026"],
+                correct: 2
+            }
+        ];
+
+        let currentQIndex = 0;
+        let score = 0;
+        let answered = false;
+
+        function renderQuestion() {
+            answered = false;
+            const q = quizQuestions[currentQIndex];
+            
+            document.getElementById('questionTracker').textContent = `Question ${currentQIndex + 1} of ${quizQuestions.length}`;
+            document.getElementById('scoreTracker').textContent = `Score: ${score}`;
+            document.getElementById('quizQuestion').textContent = q.question;
+
+            const optionsContainer = document.getElementById('quizOptions');
+            optionsContainer.innerHTML = '';
+
+            q.options.forEach((opt, idx) => {
+                const btn = document.createElement('button');
+                btn.className = "w-full text-left p-4 rounded-xl bg-slate-900 border border-slate-700 hover:border-albiceleste font-semibold text-slate-200 transition flex justify-between items-center";
+                btn.innerHTML = `<span>${opt}</span> <i class="fa-regular fa-circle text-slate-500"></i>`;
+                btn.onclick = () => selectAnswer(idx, btn);
+                optionsContainer.appendChild(btn);
+            });
+
+            document.getElementById('quizFeedback').classList.add('hidden');
+            document.getElementById('nextBtn').classList.add('hidden');
+        }
+
+        function selectAnswer(selectedIndex, btnElement) {
+            if (answered) return;
+            answered = true;
+
+            const q = quizQuestions[currentQIndex];
+            const feedbackBox = document.getElementById('quizFeedback');
+            const options = document.getElementById('quizOptions').children;
+
+            if (selectedIndex === q.correct) {
+                score++;
+                document.getElementById('scoreTracker').textContent = `Score: ${score}`;
+                btnElement.className = "w-full text-left p-4 rounded-xl bg-emerald-950/80 border-2 border-emerald-500 font-semibold text-emerald-200 transition flex justify-between items-center";
+                btnElement.innerHTML = `<span>${q.options[selectedIndex]}</span> <i class="fa-solid fa-circle-check text-emerald-400 text-lg"></i>`;
+                
+                feedbackBox.className = "p-4 rounded-xl text-sm font-semibold text-center mb-4 bg-emerald-950/60 border border-emerald-800 text-emerald-300";
+                feedbackBox.textContent = "✨ Correct! Fantastic job!";
+            } else {
+                btnElement.className = "w-full text-left p-4 rounded-xl bg-rose-950/80 border-2 border-rose-500 font-semibold text-rose-200 transition flex justify-between items-center";
+                btnElement.innerHTML = `<span>${q.options[selectedIndex]}</span> <i class="fa-solid fa-circle-xmark text-rose-400 text-lg"></i>`;
+                
+                // Highlight correct one
+                options[q.correct].className = "w-full text-left p-4 rounded-xl bg-emerald-950/40 border border-emerald-500/50 font-semibold text-emerald-300 transition flex justify-between items-center";
+                
+                feedbackBox.className = "p-4 rounded-xl text-sm font-semibold text-center mb-4 bg-rose-950/60 border border-rose-800 text-rose-300";
+                feedbackBox.textContent = `Nice try! The correct answer was "${q.options[q.correct]}".`;
+            }
+
+            feedbackBox.classList.remove('hidden');
+            document.getElementById('nextBtn').classList.remove('hidden');
+        }
+
+        function nextQuestion() {
+            currentQIndex++;
+            if (currentQIndex < quizQuestions.length) {
+                renderQuestion();
+            } else {
+                showResults();
+            }
+        }
+
+        function showResults() {
+            document.getElementById('quizContainer').classList.add('hidden');
+            document.getElementById('resultsScreen').classList.remove('hidden');
+            document.getElementById('finalScoreText').textContent = `You scored ${score} out of ${quizQuestions.length}!`;
+            
+            if (score === quizQuestions.length) {
+                launchConfetti();
+            }
+        }
+
+        function restartQuiz() {
+            currentQIndex = 0;
+            score = 0;
+            document.getElementById('resultsScreen').classList.add('hidden');
+            document.getElementById('quizContainer').classList.remove('hidden');
+            renderQuestion();
+        }
+
+        // Initialize quiz on load
+        renderQuestion();
+
+        /* ----------------------------------------------------
+           3. CELEBRATION CONFETTI EFFECT
+        ---------------------------------------------------- */
+        function launchConfetti() {
+            const canvas = document.getElementById('confettiCanvas');
+            const ctx = canvas.getContext('2d');
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+
+            const pieces = [];
+            const colors = ['#75AADB', '#FFD700', '#10B981', '#EC4899', '#FFFFFF'];
+
+            for (let i = 0; i < 80; i++) {
+                pieces.push({
+                    x: Math.random() * canvas.width,
+                    y: Math.random() * canvas.height - canvas.height,
+                    size: Math.random() * 8 + 4,
+                    color: colors[Math.floor(Math.random() * colors.length)],
+                    speedY: Math.random() * 3 + 2,
+                    speedX: Math.random() * 2 - 1,
+                    rotation: Math.random() * 360
+                });
+            }
+
+            let animationId;
+            function animate() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                pieces.forEach((p) => {
+                    p.y += p.speedY;
+                    p.x += p.speedX;
+                    p.rotation += 2;
+
+                    ctx.save();
+                    ctx.translate(p.x, p.y);
+                    ctx.rotate((p.rotation * Math.PI) / 180);
+                    ctx.fillStyle = p.color;
+                    ctx.fillRect(-p.size / 2, -p.size / 2, p.size, p.size);
+                    ctx.restore();
+                });
+
+                if (pieces.some(p => p.y < canvas.height)) {
+                    animationId = requestAnimationFrame(animate);
+                } else {
+                    ctx.clearRect(0, 0, canvas.width, canvas.height);
+                }
+            }
+            animate();
+        }
+    </script>
+</body>
+</html>
